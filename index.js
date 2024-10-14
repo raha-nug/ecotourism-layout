@@ -1,15 +1,19 @@
-const express = require('express')
+const express = require("express");
 const app = express();
 const path = require("path");
 const port = 3000;
 
+const userRoutes = require("./src/routes/users-routes");
 
-app.use(express.static("src/public"));
+app.use(express.static(path.join(__dirname, "src/public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "src/views"));
 
 // Menambahkan folder statis untuk Bootstrap
-app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+app.use(
+  "/bootstrap",
+  express.static(path.join(__dirname, "node_modules/bootstrap/dist/css"))
+);
 app.use(
   "/bootstrap",
   express.static(path.join(__dirname, "node_modules/bootstrap/dist/js"))
@@ -21,15 +25,17 @@ app.use(
   express.static(path.join(__dirname, "node_modules/bootstrap-icons/font"))
 );
 
-// popper dropdown
-app.use(
-  "/popper",
-  express.static(path.join(__dirname, "node_modules/@popperjs/core/dist/umd"))
-);
+// Mengatur file statis dari folder node_modules
+app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
 
+// Include Routes
+app.use((req, res, next) => {
+  res.locals.req = req;
+  next()
+}, userRoutes);
 
 app.get("/", (req, res) => {
-  res.render('index');
+  res.render("index");
 });
 
 app.listen(port, () => {
