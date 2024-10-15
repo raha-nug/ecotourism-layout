@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const { countries } = require("country-data"); // Import data negara
-const port = 5000;
+const port = 3000;
+const userRoutes = require("./src/routes/users-routes");
+const authRoutes = require("./src/routes/auth-routes");
 
-app.use(express.static("src/public"));
+app.use(express.static(path.join(__dirname, "src/public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "src/views"));
 
@@ -27,12 +29,18 @@ app.use(
   express.static(path.join(__dirname, "node_modules/bootstrap-icons/font"))
 );
 
-// popper dropdown
-app.use(
-  "/popper",
-  express.static(path.join(__dirname, "node_modules/@popperjs/core/dist/umd"))
-);
+// Mengatur file statis dari folder node_modules
+app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
 
+// Include Routes
+app.use((req, res, next) => {
+  res.locals.req = req;
+  next()
+}, userRoutes);
+app.use((req, res, next) => {
+  res.locals.req = req;
+  next()
+}, authRoutes);
 // Mengambil data negara dan mengirimkannya ke client
 app.get("/countries", (req, res) => {
   const countryList = countries.all.map((country) => ({
@@ -54,11 +62,12 @@ app.get("/form-register", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.sendFile(path.join(__dirname, "src/views/auth/login.html"));
 });
 
 app.get("/landingPage", (req, res) => {
   res.sendFile(path.join(__dirname, "src/views/landingPage/index.html"));
+  res.render("index");
 });
 
 app.listen(port, () => {
