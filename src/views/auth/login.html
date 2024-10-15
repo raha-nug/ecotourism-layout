@@ -89,43 +89,46 @@
           <div class="tw-shadow-none">
             <h1 class="tw-text-3xl tw-text-black tw-font-bold">Login</h1>
           </div>
+          <form method="POST" action="/login">
           <CardBody class="tw-flex tw-flex-col tw-gap-6 tw-w-[24rem]">
-            <div class="tw-w-full tw-max-w-sm tw-min-w-[200px]">
-              <div class="tw-relative">
-                <input
-                  class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow"
-                />
-                <label
-                  class="tw-absolute tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90"
-                >
-                  Email
-                </label>
+              <div class="tw-w-full tw-max-w-sm tw-min-w-[200px]">
+                <div class="tw-relative">
+                  <input
+                    class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow"
+                  />
+                  <label
+                    class="tw-absolute tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90"
+                  >
+                    Email
+                  </label>
+                </div>
               </div>
-            </div>
-            <div class="tw-w-full tw-max-w-sm tw-min-w-[200px]">
-              <div class="tw-relative">
-                <input
-                  class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow"
-                />
-                <label
-                  class="tw-absolute tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90"
-                >
-                  Password
-                </label>
+              <div class="tw-w-full tw-max-w-sm tw-min-w-[200px]">
+                <div class="tw-relative">
+                  <input type="password"
+                    class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow"
+                  />
+                  <label
+                    class="tw-absolute tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90"
+                  >
+                    Password
+                  </label>
+                </div>
               </div>
-            </div>
-
-            <button
-              id="btnLogin"
-              class="tw-w-full tw-mt-6 tw-bg-green-700 tw-text-white tw-px-4 tw-py-2 tw-rounded-md tw-flex tw-items-center tw-justify-center tw-gap-2 tw-transition-all hover:tw-bg-green-800 focus:tw-ring-2 focus:tw-ring-green-500"
-            >
-              <span
-                id="spinner"
-                class="tw-hidden tw-h-5 tw-w-5 tw-border-4 tw-border-white tw-border-t-transparent tw-rounded-full tw-animate-spin"
-              ></span>
-              <span>Sign In</span>
-            </button>
-          </CardBody>
+  
+              <button
+              type="submit"
+                id="btnLogin"
+                class="tw-w-full tw-mt-6 tw-bg-green-700 tw-text-white tw-px-4 tw-py-2 tw-rounded-md tw-flex tw-items-center tw-justify-center tw-gap-2 tw-transition-all hover:tw-bg-green-800 focus:tw-ring-2 focus:tw-ring-green-500"
+              >
+                <span
+                  id="spinner"
+                  class="tw-hidden tw-h-5 tw-w-5 tw-border-4 tw-border-white tw-border-t-transparent tw-rounded-full tw-animate-spin"
+                ></span>
+                <span>Sign In</span>
+              </button>
+            </CardBody>
+          </form>
           <CardFooter>
             <p>
               Don’t have an account?
@@ -170,7 +173,7 @@
 
             // Arahkan ke halaman utama setelah alert menghilang
             setTimeout(() => {
-              window.location.href = "/";
+              window.location.href = "/users";
             }, 500); // Waktu untuk transisi alert
           }, 1000);
         }, 2000); // Simulasi delay 2 detik untuk proses login
