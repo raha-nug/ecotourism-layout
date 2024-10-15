@@ -25,7 +25,7 @@ router.get("/users/opt1", (req, res) => {
     title: "Assessment Progress",
     subtitle: "Dior Hotel",
     pages: [''],
-    path_include: "contents/users/optional-dashboard-1",
+    path_include: "contents/users/options/option-1",
     sideMenu: sidebarMenu,
   });
 });

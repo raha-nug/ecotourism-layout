@@ -26,7 +26,7 @@
   --bs-primary: #009e49;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
-  --bs-info: #0dcaf0;
+  --bs-info: #435ebe;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
@@ -17359,7 +17359,7 @@ body .bi:before {
   overflow: visible;
 }
 .progress.progress-info .progress-bar {
-  background-color: #0dcaf0;
+  background-color: #435ebe;
   border-radius: 0.25rem;
 }
 .progress.progress-warning {
