@@ -4,6 +4,7 @@ const path = require("path");
 const port = 3000;
 
 const userRoutes = require("./src/routes/users-routes");
+const auditorRoutes = require("./src/routes/auditor-routes");
 
 app.use(express.static(path.join(__dirname, "src/public")));
 app.set("view engine", "ejs");
@@ -33,6 +34,10 @@ app.use((req, res, next) => {
   res.locals.req = req;
   next()
 }, userRoutes);
+app.use((req, res, next) => {
+  res.locals.req = req;
+  next()
+}, auditorRoutes);
 
 app.get("/", (req, res) => {
   res.render("index");
