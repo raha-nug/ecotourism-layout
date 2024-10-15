@@ -4,127 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Mazer Admin Dashboard</title>
-    <link rel="stylesheet" href="assets/css/main/app.css" />
-    <link rel="stylesheet" href="assets/css/pages/auth.css" />
+    <link rel="stylesheet" href="/output.css" />
     <link
       rel="shortcut icon"
-      href="assets/images/logo/eco-icon.webp"
-      type="image/x-icon" />
-    <link rel="stylesheet" href="assets/css/main/app.css" />
-    <link rel="stylesheet" href="assets/css/main/app-dark.css" />
+      href="/assets/images/logo/eco-icon.webp"
+      type="image/x-icon"
+    />
     <link
       rel="shortcut icon"
-      href="assets/images/logo/eco-icon.webp"
-      type="image/x-icon" />
-    <link
-      rel="shortcut icon"
-      href="assets/images/logo/eco-icon.webp"
-      type="image/png" />
+      href="/assets/images/logo/eco-icon.webp"
+      type="image/png"
+    />
 
-    <link rel="stylesheet" href="assets/css/shared/iconly.css" />
+    <!-- Material Icons Link -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+
+    <!-- stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
+    />
+    <script src="/node_modules/@material-tailwind/html/scripts/ripple.js"></script>
   </head>
 
   <body>
-    <div id="app">
-      <div class="d-flex justify-content-center align-items-center">
-        <div>
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Vertical Form with Icons</h4>
-            </div>
-            <div class="card-content">
-              <div class="card-body">
-                <form class="form form-vertical">
-                  <div class="form-body">
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="form-group has-icon-left">
-                          <label for="first-name-icon">First Name</label>
-                          <div class="position-relative">
-                            <input
-                              type="text"
-                              class="form-control"
-                              placeholder="Input with icon left"
-                              id="first-name-icon" />
-                            <div class="form-control-icon">
-                              <i class="bi bi-person"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group has-icon-left">
-                          <label for="email-id-icon">Email</label>
-                          <div class="position-relative">
-                            <input
-                              type="text"
-                              class="form-control"
-                              placeholder="Email"
-                              id="email-id-icon" />
-                            <div class="form-control-icon">
-                              <i class="bi bi-envelope"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group has-icon-left">
-                          <label for="mobile-id-icon">Mobile</label>
-                          <div class="position-relative">
-                            <input
-                              type="text"
-                              class="form-control"
-                              placeholder="Mobile"
-                              id="mobile-id-icon" />
-                            <div class="form-control-icon">
-                              <i class="bi bi-phone"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group has-icon-left">
-                          <label for="password-id-icon">Password</label>
-                          <div class="position-relative">
-                            <input
-                              type="password"
-                              class="form-control"
-                              placeholder="Password"
-                              id="password-id-icon" />
-                            <div class="form-control-icon">
-                              <i class="bi bi-lock"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-check">
-                          <div class="checkbox mt-2">
-                            <input
-                              type="checkbox"
-                              id="remember-me-v"
-                              class="form-check-input"
-                              checked />
-                            <label for="remember-me-v">Remember Me</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary me-1 mb-1">
-                          Submit
-                        </button>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div
+      class="tw-min-h-screen tw-bg-[#007F3B] tw-flex tw-flex-col tw-justify-center tw-items-center tw-gap-20"
+    >
+      <div class="tw-text-center">
+        <h1 class="tw-text-white tw-text-6xl tw-mb-3 tw-font-bold">
+          Register Now
+        </h1>
+        <p class="tw-text-blue-50 tw-text-lg">Make tourism more sustainable</p>
+      </div>
+      <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
+        <button
+          class="tw-bg-white tw-text-primary tw-font-bold tw-py-2 tw-px-4 tw-rounded tw-w-full"
+        >
+          Sign Up
+        </button>
+        <p class="tw-text-white tw-mt-6">
+          Don’t have an account?
+          <a href="/auth/login" class="tw-font-semibold tw-underline">
+            Sign In
+          </a>
+        </p>
       </div>
     </div>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/app.js"></script>
+
+    <!-- from node_modules -->
+    <script src="/node_modules/@material-tailwind/html/scripts/ripple.js"></script>
+
+    <!-- from cdn -->
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <!-- script -->
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
   </body>
 </html>

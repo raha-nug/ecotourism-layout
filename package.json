@@ -1,14 +1,22 @@
 {
   "dependencies": {
+    "@material-tailwind/html": "^2.3.2",
+    "@material-tailwind/react": "^2.1.10",
     "alpinejs": "^3.14.1",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "country-data": "^0.0.31",
     "ejs": "^3.1.10",
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "primereact": "^10.8.4",
+    "react-world-flags": "^1.6.0",
+    "tw-elements": "^2.0.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "tailwindcss": "^3.4.13"
   },
   "name": "ecotourism-fe",
   "version": "1.0.0",

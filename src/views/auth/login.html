@@ -4,88 +4,180 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Mazer Admin Dashboard</title>
-    <link rel="stylesheet" href="/assets/css/main/app.css" />
-    <link rel="stylesheet" href="/assets/css/pages/auth.css" />
+    <link rel="stylesheet" href="/output.css" />
     <link
       rel="shortcut icon"
       href="/assets/images/logo/eco-icon.webp"
-      type="image/x-icon" />
+      type="image/x-icon"
+    />
     <link
       rel="shortcut icon"
       href="/assets/images/logo/eco-icon.webp"
-      type="image/png" />
+      type="image/png"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
+    />
+    <script src="/node_modules/@material-tailwind/html/scripts/ripple.js"></script>
+    <style>
+      .fade-in {
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+      }
+      .fade-in.show {
+        opacity: 1;
+      }
+    </style>
   </head>
 
-  <body>
-    <div id="auth">
-      <div class="row">
-        <div class="col-lg-7 d-none d-lg-block">
-          <div id="auth-right"></div>
-        </div>
-        <div class="col-lg-5 col-12">
-          <div id="auth-left">
-            <div class="auth-logo">
-              <a href="/index.html">
-                <img
-                  src="/assets/images/logo/eco-icon.webp"
-                  alt="Logo"
-                  style="height: 5rem" />
-              </a>
-            </div>
-            <h2 class="auth-title">Log in.</h2>
-            <p class="auth-subtitle mb-5">
-              Log in with your data that you entered during registration.
-            </p>
+  <body class="tw-bg-[#F0F0F0] tw-mx-auto">
+    <div
+      class="relative tw-min-h-screen tw-bg-[#007F3B] tw-flex tw-flex-col tw-items-center tw-justify-center tw-gap-4 lg:tw-flex-row lg:tw-items-center lg:tw-justify-center lg:tw-gap-32"
+    >
+      <div
+        id="alertBox"
+        class="tw-hidden tw-fixed tw-top-4 tw-right-4 tw-p-4 tw-bg-green-600 tw-text-white tw-rounded-md tw-opacity-0 tw-transition-opacity tw-duration-500"
+      >
+        <p class="tw-flex tw-items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="tw-h-5 tw-w-5 tw-mr-2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+            />
+          </svg>
+          Success: Redirecting...
+        </p>
+      </div>
 
-            <form action="/index.html">
-              <div class="form-group position-relative has-icon-left mb-3">
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  placeholder="Email" />
-                <div class="form-control-icon">
-                  <i class="bi bi-person"></i>
-                </div>
-              </div>
-              <div class="form-group position-relative has-icon-left mb-3">
-                <input
-                  type="password"
-                  class="form-control form-control-lg"
-                  placeholder="Password" />
-                <div class="form-control-icon">
-                  <i class="bi bi-shield-lock"></i>
-                </div>
-              </div>
-              <div class="form-check form-check-lg d-flex align-items-end">
-                <input
-                  class="form-check-input me-2"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefault" />
-                <label
-                  class="form-check-label text-gray-600"
-                  for="flexCheckDefault">
-                  Keep me logged in
-                </label>
-              </div>
-              <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">
-                Log in
-              </button>
-            </form>
-            <div class="text-center mt-5 text-lg fs-5">
-              <p class="text-gray-600">
-                Don't have an account?
-                <a href="/auth/register.html" class="font-bold">Sign up</a>
-                .
-              </p>
-              <p>
-                <a class="font-bold" href="">Forgot password?</a>
-                .
-              </p>
-            </div>
-          </div>
+      <div
+        class="tw-flex tw-justify-start lg:tw-justify-center tw-items-center"
+      >
+        <div class="tw-text-center lg:tw-text-left">
+          <h1
+            variant="h1"
+            class="tw-text-white tw-text-4xl lg:tw-text-6xl tw-mb-3 tw-font-bold"
+          >
+            Welcome Back
+          </h1>
+          <h3 class="tw-text-blue-50 tw-text-xl">
+            Make tourism more sustainable
+          </h3>
         </div>
       </div>
+      <div class="tw-flex tw-justify-center tw-items-center">
+        <Card
+          class="tw-bg-white tw-rounded-lg tw-p-8 tw-flex tw-flex-col tw-gap-4"
+        >
+          <div class="tw-shadow-none">
+            <h1 class="tw-text-3xl tw-text-black tw-font-bold">Login</h1>
+          </div>
+          <CardBody class="tw-flex tw-flex-col tw-gap-6 tw-w-[24rem]">
+            <div class="tw-w-full tw-max-w-sm tw-min-w-[200px]">
+              <div class="tw-relative">
+                <input
+                  class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow"
+                />
+                <label
+                  class="tw-absolute tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90"
+                >
+                  Email
+                </label>
+              </div>
+            </div>
+            <div class="tw-w-full tw-max-w-sm tw-min-w-[200px]">
+              <div class="tw-relative">
+                <input
+                  class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow"
+                />
+                <label
+                  class="tw-absolute tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90"
+                >
+                  Password
+                </label>
+              </div>
+            </div>
+
+            <button
+              id="btnLogin"
+              class="tw-w-full tw-mt-6 tw-bg-green-700 tw-text-white tw-px-4 tw-py-2 tw-rounded-md tw-flex tw-items-center tw-justify-center tw-gap-2 tw-transition-all hover:tw-bg-green-800 focus:tw-ring-2 focus:tw-ring-green-500"
+            >
+              <span
+                id="spinner"
+                class="tw-hidden tw-h-5 tw-w-5 tw-border-4 tw-border-white tw-border-t-transparent tw-rounded-full tw-animate-spin"
+              ></span>
+              <span>Sign In</span>
+            </button>
+          </CardBody>
+          <CardFooter>
+            <p>
+              Don’t have an account?
+              <a
+                href="/form-register"
+                class="tw-text-[#007F3B] tw-font-semibold tw-underline"
+              >
+                Sign Up
+              </a>
+            </p>
+          </CardFooter>
+        </Card>
+      </div>
     </div>
+
+    <script>
+      const btnLogin = document.getElementById("btnLogin");
+      const spinner = document.getElementById("spinner");
+      const alertBox = document.getElementById("alertBox");
+
+      btnLogin.addEventListener("click", () => {
+        // Tampilkan spinner
+        spinner.classList.remove("tw-hidden");
+
+        // Disable tombol agar tidak bisa diklik berkali-kali
+        btnLogin.disabled = true;
+
+        // Simulasi proses API atau otentikasi
+        setTimeout(() => {
+          // Sembunyikan spinner
+          spinner.classList.add("tw-hidden");
+
+          // Tampilkan alert dengan animasi transisi
+          alertBox.classList.remove("tw-hidden", "tw-opacity-0");
+          alertBox.classList.add("tw-opacity-100");
+
+          // Redirect setelah 1 detik
+          setTimeout(() => {
+            // Sembunyikan alert dengan transisi
+            alertBox.classList.add("tw-opacity-0");
+            alertBox.classList.remove("tw-opacity-100");
+
+            // Arahkan ke halaman utama setelah alert menghilang
+            setTimeout(() => {
+              window.location.href = "/";
+            }, 500); // Waktu untuk transisi alert
+          }, 1000);
+        }, 2000); // Simulasi delay 2 detik untuk proses login
+      });
+    </script>
+
+    <script src="/node_modules/@material-tailwind/html/scripts/ripple.js"></script>
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
   </body>
 </html>
