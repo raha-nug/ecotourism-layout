@@ -49,13 +49,12 @@ const sidebarMenu = [
 ];
 
 router.get("/auditor", (req, res) => {
-    res.render("auditor-layout", {
+    res.render("auditor/dashboard", {
       user: "Jhon",
       role: "Desk Auditor",
       title: "Assessment & Reporting",
       subtitle: "Dior Hotel",
       pages: [''],
-      path_include: "contents/auditors/dashboard",
       sideMenu: sidebarMenu,
     });
 });
