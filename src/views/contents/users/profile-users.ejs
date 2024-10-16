@@ -17,10 +17,14 @@
   <div class="card">
     <div class="card-body">
       <form>
+        <h5 class="mb-3">Company Information</h5>
+
         <div class="row g-3 mb-3">
           <!-- Name of Bussiness -->
           <div class="col-md-6">
-            <label for="companyName" class="form-label">Name of Bussiness</label>
+            <label for="companyName" class="form-label">
+              Name of Bussiness
+            </label>
             <input
               type="text"
               class="form-control"
@@ -30,89 +34,125 @@
 
           <!-- Location -->
           <div class="col-md-6">
-            <label for="location" class="form-label">Location</label>
+            <label for="BussinessType" class="form-label">Bussiness Type</label>
             <input
               type="text"
               class="form-control"
-              id="location"
-              value="City, Country" />
+              id="BussinessType"
+              value="Medium" />
           </div>
         </div>
 
         <div class="row g-3 mb-3">
           <!-- Email -->
           <div class="col-md-6">
-            <label for="email" class="form-label">Email</label>
+            <label for="Country" class="form-label">Country</label>
             <input
               type="email"
               class="form-control"
-              id="email"
-              value="company@example.com" />
+              id="Country"
+              value="Indonesia" />
           </div>
 
           <!-- Phone -->
           <div class="col-md-6">
-            <label for="phone" class="form-label">Phone</label>
+            <label for="Website" class="form-label">Website</label>
             <input
               type="text"
               class="form-control"
-              id="phone"
-              value="+123 456 789" />
+              id="Website"
+              value="diorhotel.com" />
           </div>
         </div>
 
         <div class="row g-3 mb-3">
           <!-- Website -->
           <div class="col-md-6">
-            <label for="website" class="form-label">Website</label>
+            <label for="socialMedia" class="form-label">Social Media</label>
             <input
               type="url"
               class="form-control"
-              id="website"
-              value="www.companywebsite.com" />
+              id="socialMedia"
+              value="www.diorhotel.com" />
           </div>
 
-          <!-- Certification Status -->
           <div class="col-md-6">
-            <label for="certification" class="form-label">
-              Certification Status
-            </label>
-            <select class="form-select" id="certification">
-              <option selected>Certified</option>
-              <option value="in-progress">In Progress</option>
-              <option value="pending">Pending</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row g-3 mb-3">
-          <!-- Description -->
-          <div class="col-12">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" rows="4">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. This company focuses on providing sustainable ecotourism services while maintaining ecological balance.</textarea
-            >
+            <label for="logo" class="form-label">Upload Company Logo</label>
+            <input type="file" class="form-control" id="logo" />
           </div>
         </div>
 
         <div class="row g-3 mb-3">
           <!-- Logo Upload -->
-          <div class="col-md-6">
-            <label for="logo" class="form-label">Upload Company Logo</label>
-            <input type="file" class="form-control" id="logo" />
-          </div>
-
-          <!-- Registered Date -->
-          <div class="col-md-6">
-            <label for="registered" class="form-label">Registered Date</label>
-            <input
-              type="date"
-              class="form-control"
-              id="registered"
-              value="2023-01-12" />
+          <div class="col-12">
+            <label for="Address" class="form-label">Address</label>
+            <textarea class="form-control" id="Address" rows="4">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. This company focuses on providing sustainable ecotourism services while maintaining ecological balance.</textarea
+            >
           </div>
         </div>
 
+        <hr />
+
+        <h5 class="mb-3">Contact Person</h5>
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              value="Jhon Doe" />
+          </div>
+          <div class="col-md-6">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              value="@halodior" />
+          </div>
+        </div>
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label for="emailPerson" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailPerson"
+              value="jhon@halodior.com" />
+          </div>
+          <div class="col-md-6">
+            <label for="organizationPosition" class="form-label">
+              Organization Position
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="organizationPosition"
+              value="Manager" />
+          </div>
+        </div>
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label for="contactAddress" class="form-label">
+              Contact Address
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="contactAddress"
+              value="628876756678" />
+          </div>
+          <div class="col-md-6">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              value="somePassword" />
+          </div>
+        </div>
         <!-- Buttons -->
         <div class="row g-3">
           <div class="col-md-12 d-flex justify-content-end">
