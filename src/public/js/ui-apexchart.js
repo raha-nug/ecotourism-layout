@@ -354,7 +354,7 @@ var barOptions = {
   },
   yaxis: {
     title: {
-      text: "$ (thousands)",
+      text: "",
     },
   },
   fill: {
@@ -374,7 +374,7 @@ let percentage = 30; // Nilai persentase Anda
 let color = "#2ecc71"; // default ke hijau
 
 var radialMandatoryCriteria = {
-  series: [percentage],
+  series: [100],
   chart: {
     height: 300,
     type: "radialBar",
@@ -691,7 +691,13 @@ var options = {
     size: 3,
   },
   yaxis: {
-    stepSize: 20,
+    max: 100,
+    min:0,
+    // labels: {
+    //   formatter: function (value) {
+    //     return value === 100 ? value : ""; // Hanya menampilkan nilai maksimum 100
+    //   },
+    // },
   },
   xaxis: {
     categories: ["AM", "SU", "SG", "CW", "SA", "LA", "QA", "PC", "SS"],

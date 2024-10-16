@@ -38,8 +38,9 @@
             <li class="submenu-item <%= subMenu.isActive ? 'active' : '' %>">
               <a
                 href="/users/tasks/<%= section.path %>/<%= subMenu.name %>"
-                class="sidebar-link">
+                class="sidebar-link d-flex justify-content-between">
                 <span><%= subMenu.name %></span>
+                <i class="bi bi-check-square"></i>
               </a>
             </li>
             <% }) %>

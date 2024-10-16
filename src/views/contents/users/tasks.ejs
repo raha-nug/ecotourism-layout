@@ -7,73 +7,157 @@
       </h4>
     </div>
   </div>
+
   <div class="card">
     <div class="card-header">
       <span class="badge bg-danger float-end">Mandatory</span>
     </div>
-    <div class="card-body p-3 p-lg-5">
-      <h6>
-        1.1 Availability of document showing both natural and cultural resources
-        or inventories
-      </h6>
-      <div class="">
-        <div id="radioContainer" class="d-flex gap-2 flex-column mt-2">
-          <div class="border border-primary rounded-3 py-2 px-3">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                checked
-                name="radio"
-                id="flexRadioDefault1" />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Yes, Lorem ipsum dolor sit amet.
-              </label>
-            </div>
-          </div>
-          <div class="border border-grey rounded-3 py-2 px-3">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="radio"
-                id="radio1" />
-              <label class="form-check-label" for="radio1">
-                No, Lorem ipsum dolor sit amet.
-              </label>
-            </div>
-          </div>
-          <div class="border border-grey rounded-3 py-2 px-3">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="radio"
-                id="radio2" />
-              <label class="form-check-label" for="radio2">Not Applicable</label>
+    <div class="card-body">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="report-tab"
+            data-bs-toggle="tab"
+            href="#report"
+            role="tab"
+            aria-controls="report"
+            aria-selected="true">
+            Report
+          </a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="performance-tab"
+            data-bs-toggle="tab"
+            href="#performance"
+            role="tab"
+            aria-controls="performance"
+            aria-selected="false">
+            Performance Indicator
+          </a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="guidance-tab"
+            data-bs-toggle="tab"
+            href="#guidance"
+            role="tab"
+            aria-controls="guidance"
+            aria-selected="false">
+            Guidance
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content p-2 p-lg-3" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="report"
+          role="tabpanel"
+          aria-labelledby="report-tab">
+          <div class="my-3">
+            <h6 id="indicator">
+              1.1 Availability of document showing both natural and cultural
+              resources or inventories
+            </h6>
+            <div class="">
+              <div id="radioContainer" class="d-flex gap-2 flex-column mt-2">
+                <div class="border border-primary rounded-3 py-2 px-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      checked
+                      name="radio"
+                      id="flexRadioDefault1" />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Yes, Lorem ipsum dolor sit amet.
+                    </label>
+                  </div>
+                </div>
+                <div class="border border-grey rounded-3 py-2 px-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="radio"
+                      id="radio1" />
+                    <label class="form-check-label" for="radio1">
+                      No, Lorem ipsum dolor sit amet.
+                    </label>
+                  </div>
+                </div>
+                <div class="border border-grey rounded-3 py-2 px-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="radio"
+                      id="radio2" />
+                    <label class="form-check-label" for="radio2">
+                      Not Applicable
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <label for="formFile" class="form-label">Please explain</label>
+                <div id="editor" style="height: 9rem"></div>
+              </div>
+              <div id="fileContainer">
+                <div class="mt-4">
+                  <label for="formFile" class="form-label">
+                    or upload a file
+                  </label>
+                  <input class="form-control" type="file" id="formFile" />
+                </div>
+              </div>
+              <div class="mt-4">
+                <button type="button" class="btn btn-primary" id="addFile">
+                  Add another file
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="mt-4">
-          <label for="formFile" class="form-label">Please explain</label>
-          <div id="editor" style="height: 9rem"></div>
+        <div
+          class="tab-pane fade"
+          id="performance"
+          role="tabpanel"
+          aria-labelledby="performance-tab">
+          Integer interdum diam eleifend metus lacinia, quis gravida eros
+          mollis. Fusce non sapien sit amet magna dapibus ultrices. Morbi
+          tincidunt magna ex, eget faucibus sapien bibendum non. Duis a mauris
+          ex. Ut finibus risus sed massa mattis porta. Aliquam sagittis massa et
+          purus efficitur ultricies. Integer pretium dolor at sapien laoreet
+          ultricies. Fusce congue et lorem id convallis. Nulla volutpat tellus
+          nec molestie finibus. In nec odio tincidunt eros finibus ullamcorper.
+          Ut sodales, dui nec posuere finibus, nisl sem aliquam metus, eu
+          accumsan lacus felis at odio. Sed lacus quam, convallis quis
+          condimentum ut, accumsan congue massa. Pellentesque et quam vel massa
+          pretium ullamcorper vitae eu tortor.
         </div>
-        <div id="fileContainer">
-          <div class="mt-4">
-            <label for="formFile" class="form-label">or upload a file</label>
-            <input class="form-control" type="file" id="formFile" />
-          </div>
-        </div>
-        <div class="mt-4">
-          <button type="button" class="btn btn-primary" id="addFile">
-            Add another file
-          </button>
+        <div
+          class="tab-pane fade"
+          id="guidance"
+          role="tabpanel"
+          aria-labelledby="guidance-tab">
+          <p class="mt-2">
+            Duis ultrices purus non eros fermentum hendrerit. Aenean ornare
+            interdum viverra. Sed ut odio velit. Aenean eu diam dictum nibh
+            rhoncus mattis quis ac risus. Vivamus eu congue ipsum. Maecenas id
+            sollicitudin ex. Cras in ex vestibulum, posuere orci at,
+            sollicitudin purus. Morbi mollis elementum enim, in cursus sem
+            placerat ut.
+          </p>
         </div>
       </div>
     </div>
     <div class="card-footer d-flex justify-content-end gap-3">
-      <a href="" class="btn btn-light">Previous</a>
-      <a href="" class="btn btn-light">Next</a>
+      <button class="btn btn-light" id="btn-previous">Previous</button>
+      <button class="btn btn-light" id="btn-next">Next</button>
     </div>
   </div>
 </section>
@@ -81,28 +165,6 @@
 <script>
   const quill = new Quill("#editor", {
     theme: "snow",
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Periksa apakah namespace `ej` ada
-    if (window.ej && window.ej.filemanager) {
-      let hostUrl = "https://ej2-aspcore-service.azurewebsites.net/";
-      let filemanagerInstance = new ej.filemanager.FileManager({
-        ajaxSettings: {
-          url: hostUrl + "api/FileManager/FileOperations",
-          downloadUrl: hostUrl + "api/FileManager/Download",
-          uploadUrl: hostUrl + "api/FileManager/Upload",
-          getImageUrl: hostUrl + "api/FileManager/GetImage",
-        },
-      });
-
-      // Render the initialized FileManager
-      filemanagerInstance.appendTo("#filemanager");
-    } else {
-      console.error("Syncfusion FileManager library is not loaded.");
-    }
   });
 </script>
 
@@ -176,4 +238,24 @@
       radio.addEventListener("change", updateBorders);
     });
   });
+</script>
+
+<script>
+  // JavaScript to handle the increment and decrement of indicator
+  let currentIndicator = 1; // Initial indicator value
+
+  const btnNext = document.querySelector("#btn-next");
+  const btnPrev = document.querySelector("#btn-previous");
+  const indicatorElement = document.getElementById("indicator");
+
+  // Event listeners for Next and Previous buttons
+  btnNext.addEventListener("click", () => {
+    indicatorElement.innerText = `1.2 Availability of document showing which resources are reinvested (e.g. Reinvestment Plan)`;
+  });
+
+  btnPrev.addEventListener("click", () => {
+    indicatorElement.innerText = `1.1 Availability of document showing both natural and cultural resources or inventories`;
+  });
+
+  // Initialize the indicator on page load
 </script>
