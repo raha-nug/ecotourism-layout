@@ -27,42 +27,14 @@ const subMenu = [
   },
 ];
 
-const theme = [
+const Criteria = [
   {
-    name: "Adaptive Management (AM)",
-    desc: "Maximizing the Benefits and Minimizing the Negative Impacts",
-  },
-  {
-    name: "Sustainable Use (SU)",
-    desc: "Contributing to Natural Conservation",
-  },
-  {
-    name: "Safeguarding (SG)",
-    desc: "Contributing to Preservation of Cultural Heritage and Spiritual Assets",
-  },
-  {
-    name: "Community Welfare (CW)",
-    desc: "Improving Livelihood, Local Economy, and Welfare",
-  },
-  {
-    name: "Stakeholder Awareness (SA)",
-    desc: "Increasing Understanding of Stakeholder on Ecotourism",
-  },
-  {
-    name: "Leveraging Appreciation (LA)",
-    desc: "Providing interpretation to Improve Tourists Appreciation",
-  },
-  {
-    name: "Quality Experience (QE)",
-    desc: "Enhancing the quality of tourist experience by providing an excellent service",
-  },
-  {
-    name: "Partnership and Collaboration (PC)",
-    desc: "Maintaining sustainability by strengthening collaboration",
-  },
-  {
-    name: "Safety and Security (SS)",
-    desc: "Mitigating risks to ensure business continuity and tourist safety",
+    name: "AM.1",
+    desc: "Reinvest profits from ecotourism development to maintain the quality of natural and cultural resources",
+    level: "Mandatory",
+    activities: false,
+    fasilities: true,
+    services: true,
   },
 ];
 
@@ -84,6 +56,19 @@ router.get("/admin/theme", (req, res) => {
     sideMenu: sidebarMenu,
     subMenu: subMenu,
     theme: theme,
+  });
+});
+
+router.get("/admin/criteria", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "List Criteria",
+    title: "List Criteria",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/criteria",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    criteria: Criteria,
   });
 });
 
