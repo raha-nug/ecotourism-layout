@@ -6,6 +6,7 @@ const port = 3000;
 const userRoutes = require("./src/routes/users-routes");
 const auditorRoutes = require("./src/routes/auditor-routes");
 const authRoutes = require("./src/routes/auth-routes");
+const adminRoutes = require("./src/routes/admin-routes");
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -48,6 +49,10 @@ app.use((req, res, next) => {
   res.locals.req = req;
   next();
 }, authRoutes);
+app.use((req, res, next) => {
+  res.locals.req = req;
+  next();
+}, adminRoutes);
 // Mengambil data negara dan mengirimkannya ke client
 app.get("/countries", (req, res) => {
   const countryList = countries.all.map((country) => ({

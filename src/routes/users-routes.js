@@ -34,6 +34,17 @@ router.get("/users/opt1", (req, res) => {
   });
 });
 
+router.get("/users/opt1", (req, res) => {
+  res.render("dashboard", {
+    content: "tasks",
+    title: "Assessment Progress",
+    subtitle: "Dior Hotel",
+    pages: [""],
+    path_include: "contents/users/optional-dashboard-1",
+    sideMenu: sidebarMenu,
+  });
+});
+
 router.get("/users/tasks/", generateBreadcrumb, (req, res) => {
   res.render("dashboard", {
     content: "tasks",
