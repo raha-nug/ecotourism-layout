@@ -94,7 +94,7 @@
               <div class="tw-w-full tw-max-w-sm tw-min-w-[200px]">
                 <div class="tw-relative">
                   <input
-                    class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow"
+                    class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow" name="email"
                   />
                   <label
                     class="tw-absolute tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90"
@@ -106,7 +106,7 @@
               <div class="tw-w-full tw-max-w-sm tw-min-w-[200px]">
                 <div class="tw-relative">
                   <input type="password"
-                    class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow"
+                    class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow" name="password"
                   />
                   <label
                     class="tw-absolute tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90"
@@ -149,35 +149,35 @@
       const spinner = document.getElementById("spinner");
       const alertBox = document.getElementById("alertBox");
 
-      btnLogin.addEventListener("click", () => {
-        // Tampilkan spinner
-        spinner.classList.remove("tw-hidden");
+      // btnLogin.addEventListener("click", () => {
+      //   // Tampilkan spinner
+      //   spinner.classList.remove("tw-hidden");
 
-        // Disable tombol agar tidak bisa diklik berkali-kali
-        btnLogin.disabled = true;
+      //   // Disable tombol agar tidak bisa diklik berkali-kali
+      //   btnLogin.disabled = true;
 
-        // Simulasi proses API atau otentikasi
-        setTimeout(() => {
-          // Sembunyikan spinner
-          spinner.classList.add("tw-hidden");
+      //   // Simulasi proses API atau otentikasi
+      //   setTimeout(() => {
+      //     // Sembunyikan spinner
+      //     spinner.classList.add("tw-hidden");
 
-          // Tampilkan alert dengan animasi transisi
-          alertBox.classList.remove("tw-hidden", "tw-opacity-0");
-          alertBox.classList.add("tw-opacity-100");
+      //     // Tampilkan alert dengan animasi transisi
+      //     alertBox.classList.remove("tw-hidden", "tw-opacity-0");
+      //     alertBox.classList.add("tw-opacity-100");
 
-          // Redirect setelah 1 detik
-          setTimeout(() => {
-            // Sembunyikan alert dengan transisi
-            alertBox.classList.add("tw-opacity-0");
-            alertBox.classList.remove("tw-opacity-100");
+      //     // Redirect setelah 1 detik
+      //     setTimeout(() => {
+      //       // Sembunyikan alert dengan transisi
+      //       alertBox.classList.add("tw-opacity-0");
+      //       alertBox.classList.remove("tw-opacity-100");
 
-            // Arahkan ke halaman utama setelah alert menghilang
-            setTimeout(() => {
-              window.location.href = "/users";
-            }, 500); // Waktu untuk transisi alert
-          }, 1000);
-        }, 2000); // Simulasi delay 2 detik untuk proses login
-      });
+      //       // Arahkan ke halaman utama setelah alert menghilang
+      //       setTimeout(() => {
+      //         window.location.href = "/users";
+      //       }, 500); // Waktu untuk transisi alert
+      //     }, 1000);
+      //   }, 2000); // Simulasi delay 2 detik untuk proses login
+      // });
     </script>
 
     <script src="/node_modules/@material-tailwind/html/scripts/ripple.js"></script>

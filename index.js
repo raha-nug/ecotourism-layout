@@ -32,6 +32,9 @@ app.use(
 
 // Mengatur file statis dari folder node_modules
 app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
+app.use(express.urlencoded({ extended: true }));
+// Jika ada data JSON yang diterima
+app.use(express.json());
 
 // Include Routes
 app.use((req, res, next) => {
@@ -46,6 +49,7 @@ app.use((req, res, next) => {
   res.locals.req = req;
   next()
 }, authRoutes);
+
 // Mengambil data negara dan mengirimkannya ke client
 app.get("/countries", (req, res) => {
   const countryList = countries.all.map((country) => ({
