@@ -309,15 +309,15 @@ var barOptions = {
   series: [
     {
       name: "Self Assessment",
-      data: [44, 55, 57, 56, 61, 58, 63, 60,56 ],
+      data: [44, 55, 57, 56, 61, 58, 63, 60, 56],
     },
     {
       name: "Desk Auditor",
-      data: [76, 85, 76, 98, 87, 67, 91, 88,87],
+      data: [76, 85, 76, 98, 87, 67, 91, 88, 87],
     },
     {
       name: "Onsite Auditor",
-      data: [35, 41, 36, 26, 45, 48, 52, 53,61],
+      data: [35, 41, 36, 26, 45, 48, 52, 53, 61],
     },
   ],
   chart: {
@@ -372,12 +372,6 @@ var barOptions = {
 // Contoh modifikasi radialGradientOptions untuk warna merah ke hijau
 let percentage = 30; // Nilai persentase Anda
 let color = "#2ecc71"; // default ke hijau
-
-if (percentage <= 30) {
-  color = "#e74c3c"; // Merah untuk nilai rendah
-} else if (percentage < 70) {
-  color = "#f39c12"; // Kuning untuk nilai sedang
-}
 
 var radialMandatoryCriteria = {
   series: [percentage],
@@ -442,7 +436,7 @@ var radialMandatoryCriteria = {
   },
   fill: {
     type: "solid",
-    colors: color,
+    colors: "#e74c3c",
   },
   stroke: {
     lineCap: "round",
@@ -513,7 +507,7 @@ var radialOptionCriteria = {
   },
   fill: {
     type: "solid",
-    colors:  "#808080",
+    colors: "#808080",
   },
   stroke: {
     lineCap: "round",
@@ -659,9 +653,6 @@ var radialBarOptions = {
   labels: ["Apples", "Oranges", "Bananas", "Berries"],
 };
 
-
-
-
 var options = {
   series: [
     {
@@ -709,10 +700,6 @@ var options = {
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
-
-
-
-
 
 var bar = new ApexCharts(document.querySelector("#bar"), barOptions);
 var line = new ApexCharts(document.querySelector("#line"), lineOptions);

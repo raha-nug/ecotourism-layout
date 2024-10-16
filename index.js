@@ -7,6 +7,8 @@ const userRoutes = require("./src/routes/users-routes");
 const auditorRoutes = require("./src/routes/auditor-routes");
 const authRoutes = require("./src/routes/auth-routes");
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static(path.join(__dirname, "src/public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "src/views"));
@@ -36,15 +38,15 @@ app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
 // Include Routes
 app.use((req, res, next) => {
   res.locals.req = req;
-  next()
+  next();
 }, userRoutes);
 app.use((req, res, next) => {
   res.locals.req = req;
-  next()
+  next();
 }, auditorRoutes);
 app.use((req, res, next) => {
   res.locals.req = req;
-  next()
+  next();
 }, authRoutes);
 // Mengambil data negara dan mengirimkannya ke client
 app.get("/countries", (req, res) => {

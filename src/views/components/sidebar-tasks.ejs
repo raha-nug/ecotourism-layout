@@ -26,62 +26,27 @@
       <ul class="menu">
         <li class="sidebar-title">Themes</li>
 
-        <li class="sidebar-item active">
-          <a
-            href="/ecotourism-layout/tasks/themes/theme1.html"
-            class="sidebar-link">
-            <span>Adaptive Management</span>
+        <% menuSections.forEach(function(section) { %>
+        <li
+          class="sidebar-item <%= section.isActive ? 'active' : '' %> has-sub">
+          <a href="#" class="sidebar-link">
+            <i class="<%= section.icon %>"></i>
+            <span><%= section.label %></span>
           </a>
+          <ul class="submenu <%= section.isActive ? 'active' : '' %>">
+            <% section.subMenus.forEach(function(subMenu) { %>
+            <li class="submenu-item <%= subMenu.isActive ? 'active' : '' %>">
+              <a
+                href="/users/tasks/<%= section.path %>/<%= subMenu.name %>"
+                class="sidebar-link">
+                <span><%= subMenu.name %></span>
+              </a>
+            </li>
+            <% }) %>
+          </ul>
         </li>
-        <li class="sidebar-item">
-          <a
-            href="/ecotourism-layout/tasks/themes/theme2.html"
-            class="sidebar-link">
-            <span>Sustainable Use</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a
-            href="/ecotourism-layout/tasks/themes/theme3.html"
-            class="sidebar-link">
-            <span>Community Welfare</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a
-            href="/ecotourism-layout/tasks/themes/theme4.html"
-            class="sidebar-link">
-            <span>Stakeholder Awareness</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a
-            href="/ecotourism-layout/tasks/themes/theme5.html"
-            class="sidebar-link">
-            <span>Leveraging Aprreciation</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a
-            href="/ecotourism-layout/tasks/themes/theme6.html"
-            class="sidebar-link">
-            <span>Quality Experience</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a
-            href="/ecotourism-layout/tasks/themes/theme7.html"
-            class="sidebar-link">
-            <span>Partnership and Collaboration</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a
-            href="/ecotourism-layout/tasks/themes/theme8.html"
-            class="sidebar-link">
-            <span>Safety and Security</span>
-          </a>
-        </li>
+        <% }) %>
+
         <li class="sidebar-title">Completed</li>
         <li class="sidebar-item mb-3">
           <div class="progress progress-primary">

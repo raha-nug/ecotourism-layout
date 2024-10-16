@@ -9,90 +9,71 @@
   </div>
   <div class="card">
     <div class="card-header">
-      <span class="float-end">Mandatory</span>
+      <span class="badge bg-danger float-end">Mandatory</span>
     </div>
     <div class="card-body p-3 p-lg-5">
       <h6>
-        1.1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum ad
-        accusamus aperiam excepturi ducimus placeat beatae architecto natus eius
-        nobis?
+        1.1 Availability of document showing both natural and cultural resources
+        or inventories
       </h6>
-      <div class="d-flex gap-2 flex-column mt-2">
-        <div class="border border-primary rounded-3 py-2 px-3">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              checked
-              name="radio"
-              id="flexRadioDefault1" />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Yes, Lorem ipsum dolor sit amet.
-            </label>
+      <div class="">
+        <div id="radioContainer" class="d-flex gap-2 flex-column mt-2">
+          <div class="border border-primary rounded-3 py-2 px-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                checked
+                name="radio"
+                id="flexRadioDefault1" />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Yes, Lorem ipsum dolor sit amet.
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="border border-grey rounded-3 py-2 px-3">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="radio"
-              id="radio1" />
-            <label class="form-check-label" for="radio1">
-              No, Lorem ipsum dolor sit amet.
-            </label>
+          <div class="border border-grey rounded-3 py-2 px-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="radio"
+                id="radio1" />
+              <label class="form-check-label" for="radio1">
+                No, Lorem ipsum dolor sit amet.
+              </label>
+            </div>
+          </div>
+          <div class="border border-grey rounded-3 py-2 px-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="radio"
+                id="radio2" />
+              <label class="form-check-label" for="radio2">Not Applicable</label>
+            </div>
           </div>
         </div>
         <div class="mt-4">
           <label for="formFile" class="form-label">Please explain</label>
           <div id="editor" style="height: 9rem"></div>
         </div>
-        <div class="mt-4">
-          <label for="formFile" class="form-label">or upload a file</label>
-          <input class="form-control" type="file" id="formFile" />
+        <div id="fileContainer">
+          <div class="mt-4">
+            <label for="formFile" class="form-label">or upload a file</label>
+            <input class="form-control" type="file" id="formFile" />
+          </div>
         </div>
         <div class="mt-4">
-          <button
-            type="button"
-            class="btn btn-primary block"
-            data-bs-toggle="modal"
-            data-bs-target="#border-less">
-            File Manager
+          <button type="button" class="btn btn-primary" id="addFile">
+            Add another file
           </button>
-
-          <div
-            class="modal fade text-left modal-borderless"
-            id="border-less"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="myModalLabel1"
-            aria-hidden="true">
-            <div
-              class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-              role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">File Manager</h5>
-                  <button
-                    type="button"
-                    class="close rounded-pill"
-                    data-bs-dismiss="modal"
-                    aria-label="Close">
-                    <i data-feather="x"></i>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div id="filemanager"></div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
     <div class="card-footer d-flex justify-content-end gap-3">
-      <a href="" class="btn btn-outline-primary">Previous</a>
-      <a href="" class="btn btn-outline-primary">Next</a>
+      <a href="" class="btn btn-light">Previous</a>
+      <a href="" class="btn btn-light">Next</a>
     </div>
   </div>
 </section>
@@ -122,5 +103,77 @@
     } else {
       console.error("Syncfusion FileManager library is not loaded.");
     }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Ambil referensi ke tombol 'Add another file'
+    const addFileButton = document.getElementById("addFile");
+    const fileContainer = document.getElementById("fileContainer");
+    let fileIndex = 1; // Mulai index untuk file baru
+
+    // Fungsi untuk menambah input file baru
+    addFileButton.addEventListener("click", function () {
+      // Buat elemen div baru untuk input file berikutnya
+      const newFileDiv = document.createElement("div");
+      newFileDiv.classList.add("mt-4");
+
+      // Buat label baru untuk input file
+      const newLabel = document.createElement("label");
+      newLabel.setAttribute("for", `formFile${fileIndex}`);
+      newLabel.classList.add("form-label");
+      newLabel.textContent = `Upload another file (${fileIndex + 1})`;
+
+      // Buat input file baru
+      const newFileInput = document.createElement("input");
+      newFileInput.classList.add("form-control");
+      newFileInput.setAttribute("type", "file");
+      newFileInput.setAttribute("id", `formFile${fileIndex}`);
+
+      // Tambahkan label dan input ke div
+      newFileDiv.appendChild(newLabel);
+      newFileDiv.appendChild(newFileInput);
+
+      // Tambahkan div baru ke dalam fileContainer
+      fileContainer.appendChild(newFileDiv);
+
+      // Tambah index untuk input file berikutnya
+      fileIndex++;
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Ambil semua elemen radio button
+    const radios = document.querySelectorAll('input[name="radio"]');
+    const containerDivs = document.querySelectorAll("#radioContainer > div");
+
+    // Fungsi untuk mengatur border berdasarkan checked state
+    function updateBorders() {
+      // Loop melalui semua radio button
+      radios.forEach((radio, index) => {
+        if (radio.checked) {
+          // Jika radio di-checked, ubah border menjadi hijau
+          containerDivs[index].classList.add("border-success");
+          containerDivs[index].classList.remove(
+            "border-grey",
+            "border-primary"
+          );
+        } else {
+          // Jika tidak, kembalikan border ke warna default
+          containerDivs[index].classList.add("border-grey");
+          containerDivs[index].classList.remove("border-success");
+        }
+      });
+    }
+
+    // Jalankan fungsi pertama kali untuk border yang checked saat pertama kali dimuat
+    updateBorders();
+
+    // Tambahkan event listener untuk setiap radio button
+    radios.forEach((radio) => {
+      radio.addEventListener("change", updateBorders);
+    });
   });
 </script>
