@@ -1,0 +1,13 @@
+<nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+  <ol class="breadcrumb">
+    <% pages.forEach((page, index) => { %>
+
+    <li
+      class="breadcrumb-item <%= index === pages.length - 1 ? 'active' : '' %>">
+      <% if (index === pages.length - 1) { %> <%= page.name %> <% } else { %>
+      <a href="<%= page.url %>"><%= page.name %></a>
+      <% } %>
+    </li>
+    <% }) %>
+  </ol>
+</nav>

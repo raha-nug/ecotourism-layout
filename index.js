@@ -6,8 +6,11 @@ const port = 3000;
 const userRoutes = require("./src/routes/users-routes");
 const auditorRoutes = require("./src/routes/auditor-routes");
 const authRoutes = require("./src/routes/auth-routes");
+const generateBreadcrumb = require("./src/middleware/breadcrumbMiddleware");
 
 app.use(express.urlencoded({ extended: true }));
+
+app.use("/*", generateBreadcrumb);
 
 app.use(express.static(path.join(__dirname, "src/public")));
 app.set("view engine", "ejs");
