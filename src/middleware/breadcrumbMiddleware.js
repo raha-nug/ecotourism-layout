@@ -1,16 +1,26 @@
-const { capitalizeFirstLetter } = require("../utils/func");
+const {
+  capitalizeFirstLetter,
+  encodeToBase64,
+  decodeFromBase64,
+} = require("../utils/func");
 
 function generateBreadcrumb(req, res, next) {
   const query = req.query; // Get the query parameters from URL
-  const breadcrumbs = [];
+
+  const breadcrumbs = [
+    // {
+    //   name: capitalizeFirstLetter(req.baseUrl),
+    //   url: req.baseUrl,
+    // },
+  ];
 
   // Membangun URL secara bertahap berdasarkan query parameters
   let baseUrl = req.baseUrl || req.path;
 
   Object.keys(query).forEach((key, index) => {
-    baseUrl += `${index === 0 ? "?" : "&"}${key}=${query[key]}`;
+    baseUrl += `${index === 0 ? "?" : "&"}${key}=${encodeToBase64(query[key])}`;
     breadcrumbs.push({
-      name: capitalizeFirstLetter(query[key]), // Nama breadcrumb dengan huruf kapital
+      name: capitalizeFirstLetter(decodeFromBase64(query[key])), // Nama breadcrumb dengan huruf kapital
       url: baseUrl, // URL breadcrumb
     });
   });
