@@ -7,12 +7,23 @@ const {
 function generateBreadcrumb(req, res, next) {
   const query = req.query; // Get the query parameters from URL
 
-  const breadcrumbs = [
-    // {
-    //   name: capitalizeFirstLetter(req.baseUrl),
-    //   url: req.baseUrl,
-    // },
-  ];
+  const breadcrumbs = req.originalUrl
+    .split("/")
+    .filter((segment) => segment) // Menghilangkan segmen kosong
+    .map((segment, index, array) => {
+      // Menghilangkan query jika ada tanda tanya di segmen
+      const cleanSegment = segment.split("?")[0].replace(/-/g, " ");
+      const url = `/${
+        array
+          .slice(0, index + 1)
+          .join("/")
+          .split("?")[0]
+      }`; // Menghapus setelah tanda tanya pada URL
+      return {
+        name: capitalizeFirstLetter(cleanSegment), // Nama breadcrumb dengan huruf kapital
+        url: url,
+      };
+    });
 
   // Membangun URL secara bertahap berdasarkan query parameters
   let baseUrl = req.baseUrl || req.path;

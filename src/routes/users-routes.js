@@ -28,6 +28,6 @@ router.get("/users/profile/", (req, res) => {
   });
 });
 
-router.use("/users/assessment/*", assessmentRoute);
+router.use("/users/assessment/", assessmentRoute);
 
 module.exports = router;

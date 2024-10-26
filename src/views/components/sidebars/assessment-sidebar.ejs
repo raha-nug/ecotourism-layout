@@ -24,23 +24,49 @@
     </div>
     <div class="sidebar-menu">
       <ul class="menu">
-        <li class="sidebar-title">Themes</li>
+        <li class="sidebar-title">Indicator</li>
 
         <!-- isi -->
 
-        <li class="sidebar-title">Completed</li>
-        <li class="sidebar-item mb-3">
-          <div class="progress progress-primary">
-            <div
-              class="progress-bar progress-label"
-              role="progressbar"
-              style="width: 35%"
-              aria-valuenow="35"
-              aria-valuemin="0"
-              aria-valuemax="100"></div>
-          </div>
-        </li>
+        <ul class="sidebar-list" id="sidebar">
+          <% sidebar_content.forEach(indicator => { %>
+          <li
+            class="sidebar-item"
+            data-encoded-name="<%= indicator.encodedName %>">
+            <!-- Tambahkan data-encoded-name -->
+            <a
+              href="?criteria=<%= encodeURIComponent(indicator.encodedName) %>"
+              class="sidebar-link">
+              <i class="<%= indicator.icon %>"></i>
+              <span><%= indicator.name %></span>
+            </a>
+          </li>
+          <% }) %>
+        </ul>
       </ul>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Ambil query parameter 'criteria'
+    const params = new URLSearchParams(window.location.search);
+    const criteria = params.get("criteria");
+
+    if (criteria) {
+      // Temukan semua item sidebar
+      const sidebarItems = document.querySelectorAll(".sidebar-item");
+
+      // Loop melalui setiap item dan periksa apakah encodedName cocok dengan criteria
+      sidebarItems.forEach((item) => {
+        const encodedName = item.getAttribute("data-encoded-name");
+        if (encodedName === criteria) {
+          item.classList.add("active"); // Tambahkan kelas active
+        } else {
+          item.classList.remove("active"); // Hapus kelas active jika tidak cocok
+        }
+      });
+    }
+  });
+</script>
