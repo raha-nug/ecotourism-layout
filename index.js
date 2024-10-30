@@ -6,9 +6,11 @@ const port = 3000;
 const userRoutes = require("./src/routes/users-routes");
 const auditorRoutes = require("./src/routes/auditor-routes");
 const authRoutes = require("./src/routes/auth-routes");
+const featureRoute = require("./src/routes/features/features-routes");
 const generateBreadcrumb = require("./src/middleware/breadcrumbMiddleware");
 
 app.use(express.urlencoded({ extended: true }));
+require("dotenv").config();
 
 app.use("/*", generateBreadcrumb);
 
@@ -51,6 +53,8 @@ app.use((req, res, next) => {
   res.locals.req = req;
   next();
 }, authRoutes);
+
+app.use('/features',featureRoute);
 // Mengambil data negara dan mengirimkannya ke client
 app.get("/countries", (req, res) => {
   const countryList = countries.all.map((country) => ({

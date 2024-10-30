@@ -8,13 +8,14 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "country-data": "^0.0.31",
     "chart.js": "^4.4.4",
+    "country-data": "^0.0.31",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.0",
-    "remixicon": "^4.3.0",
     "primereact": "^10.8.4",
     "react-world-flags": "^1.6.0",
+    "remixicon": "^4.3.0",
     "tw-elements": "^2.0.0"
   },
   "devDependencies": {
