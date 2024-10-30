@@ -8,21 +8,26 @@
     <link
       rel="shortcut icon"
       href="/assets/images/logo/eco-icon.webp"
-      type="image/x-icon" />
+      type="image/x-icon"
+    />
     <link
       rel="shortcut icon"
       href="/assets/images/logo/eco-icon.webp"
-      type="image/png" />
+      type="image/png"
+    />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-      crossorigin="anonymous" />
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
+      href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
+    />
     <script src="/node_modules/@material-tailwind/html/scripts/ripple.js"></script>
     <style>
       .fade-in {
@@ -37,10 +42,12 @@
 
   <body class="tw-bg-[#F0F0F0] tw-mx-auto">
     <div
-      class="relative tw-min-h-screen tw-bg-[#007F3B] tw-flex tw-flex-col tw-items-center tw-justify-center tw-gap-4 lg:tw-flex-row lg:tw-items-center lg:tw-justify-center lg:tw-gap-32">
+      class="relative tw-min-h-screen tw-bg-[url('https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] tw-bg-cover tw-flex tw-flex-col tw-items-center tw-justify-center tw-gap-4 lg:tw-flex-row lg:tw-items-center lg:tw-justify-center lg:tw-gap-32"
+    >
       <div
         id="alertBox"
-        class="tw-hidden tw-fixed tw-top-4 tw-right-4 tw-p-4 tw-bg-green-600 tw-text-white tw-rounded-md tw-opacity-0 tw-transition-opacity tw-duration-500">
+        class="tw-hidden tw-fixed tw-top-4 tw-right-4 tw-p-4 tw-bg-green-600 tw-text-white tw-rounded-md tw-opacity-0 tw-transition-opacity tw-duration-500"
+      >
         <p class="tw-flex tw-items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,68 +55,79 @@
             viewBox="0 0 24 24"
             stroke-width="2"
             stroke="currentColor"
-            class="tw-h-5 tw-w-5 tw-mr-2">
+            class="tw-h-5 tw-w-5 tw-mr-2"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+              d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+            />
           </svg>
           Success: Redirecting...
         </p>
       </div>
 
       <div
-        class="tw-flex tw-justify-start lg:tw-justify-center tw-items-center">
+        class="tw-flex tw-justify-start lg:tw-justify-center tw-items-center"
+      >
         <div class="tw-text-center lg:tw-text-left">
           <h1
             variant="h1"
-            class="tw-text-white tw-text-4xl lg:tw-text-6xl tw-mb-3 tw-font-bold">
+            class="tw-text-green-700 tw-text-4xl lg:tw-text-6xl tw-mb-3 tw-font-bold"
+          >
             Welcome Back
           </h1>
-          <h3 class="tw-text-blue-50 tw-text-xl">
+          <h3 class="tw-text-green-700 tw-text-xl">
             Make tourism more sustainable
           </h3>
         </div>
       </div>
       <div class="tw-flex tw-justify-center tw-items-center">
         <Card
-          class="tw-bg-white tw-rounded-lg tw-p-8 tw-flex tw-flex-col tw-gap-4">
+          class="tw-bg-white tw-rounded-lg tw-p-8 tw-flex tw-flex-col tw-gap-4"
+        >
           <div class="tw-shadow-none">
             <h1 class="tw-text-3xl tw-text-black tw-font-bold">Login</h1>
           </div>
-          <form method="POST" action="/login">
+          <form id="loginForm" method="POST">
             <CardBody class="tw-flex tw-flex-col tw-gap-6 tw-w-[24rem]">
               <div class="tw-w-full tw-max-w-sm tw-min-w-[200px]">
                 <div class="tw-relative">
-                  <input
-                    name="email"
-                    class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow" />
                   <label
-                    class="tw-absolute tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90">
+                    class="tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90"
+                  >
                     Email
                   </label>
+                  <input
+                    name="email"
+                    class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow"
+                  />
                 </div>
               </div>
               <div class="tw-w-full tw-max-w-sm tw-min-w-[200px]">
                 <div class="tw-relative">
+                  <label
+                    class="tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90"
+                  >
+                    Password
+                  </label>
                   <input
                     type="password"
                     name="password"
-                    class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow" />
-                  <label
-                    class="tw-absolute tw-cursor-text tw-bg-white tw-px-1 tw-left-2.5 tw-top-2.5 tw-text-slate-400 tw-text-sm tw-transition-all tw-transform tw-origin-left peer-focus:tw--top-2 peer-focus:tw-left-2.5 peer-focus:tw-text-xs peer-focus:tw-text-slate-400 peer-focus:tw-scale-90">
-                    Password
-                  </label>
+                    class="tw-peer tw-w-full tw-bg-white placeholder:tw-text-slate-400 tw-text-slate-700 tw-text-sm tw-border tw-border-slate-200 tw-rounded-md tw-px-3 tw-py-2 tw-transition tw-duration-300 tw-ease focus:tw-outline-none focus:tw-border-slate-400 hover:tw-border-slate-300 tw-shadow-sm focus:tw-shadow"
+                  />
                 </div>
               </div>
 
               <button
                 type="submit"
                 id="btnLogin"
-                class="tw-w-full tw-mt-6 tw-bg-green-700 tw-text-white tw-px-4 tw-py-2 tw-rounded-md tw-flex tw-items-center tw-justify-center tw-gap-2 tw-transition-all hover:tw-bg-green-800 focus:tw-ring-2 focus:tw-ring-green-500">
+                class="tw-w-full tw-mt-6 tw-bg-green-700 tw-text-white tw-px-4 tw-py-2 tw-rounded-md tw-flex tw-items-center tw-justify-center tw-gap-2 tw-transition-all hover:tw-bg-green-800 focus:tw-ring-2 focus:tw-ring-green-500"
+              >
                 <span
                   id="spinner"
-                  class="tw-hidden tw-h-5 tw-w-5 tw-border-4 tw-border-white tw-border-t-transparent tw-rounded-full tw-animate-spin"></span>
+                  class="tw-hidden tw-h-5 tw-w-5 tw-border-4 tw-border-white tw-border-t-transparent tw-rounded-full tw-animate-spin"
+                ></span>
                 <span>Sign In</span>
               </button>
             </CardBody>
@@ -119,7 +137,8 @@
               Don’t have an account?
               <a
                 href="/form-register"
-                class="tw-text-[#007F3B] tw-font-semibold tw-underline">
+                class="tw-text-[#007F3B] tw-font-semibold tw-underline"
+              >
                 Sign Up
               </a>
             </p>
@@ -128,43 +147,8 @@
       </div>
     </div>
 
-    <!-- <script>
-      const btnLogin = document.getElementById("btnLogin");
-      const spinner = document.getElementById("spinner");
-      const alertBox = document.getElementById("alertBox");
-
-      btnLogin.addEventListener("click", () => {
-        // Tampilkan spinner
-        spinner.classList.remove("tw-hidden");
-
-        // Disable tombol agar tidak bisa diklik berkali-kali
-        btnLogin.disabled = true;
-
-        // Simulasi proses API atau otentikasi
-        setTimeout(() => {
-          // Sembunyikan spinner
-          spinner.classList.add("tw-hidden");
-
-          // Tampilkan alert dengan animasi transisi
-          alertBox.classList.remove("tw-hidden", "tw-opacity-0");
-          alertBox.classList.add("tw-opacity-100");
-
-          // Redirect setelah 1 detik
-          setTimeout(() => {
-            // Sembunyikan alert dengan transisi
-            alertBox.classList.add("tw-opacity-0");
-            alertBox.classList.remove("tw-opacity-100");
-
-            // Arahkan ke halaman utama setelah alert menghilang
-            // setTimeout(() => {
-            //   window.location.href = "/users";
-            // }, 500); // Waktu untuk transisi alert
-          }, 1000);
-        }, 2000); // Simulasi delay 2 detik untuk proses login
-      });
-    </script> -->
-
     <script src="/node_modules/@material-tailwind/html/scripts/ripple.js"></script>
     <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <script src="/authJS/login.js"></script>
   </body>
 </html>

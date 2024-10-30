@@ -70,6 +70,9 @@ app.get("/register", (req, res) => {
 app.get("/form-register", (req, res) => {
   res.sendFile(path.join(__dirname, "src/views/auth/formRegister.html"));
 });
+app.get("/info-verifikasi", (req, res) => {
+  res.sendFile(path.join(__dirname, "src/views/auth/infoVerifikasi.html"));
+});
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "src/views/auth/login.html"));
