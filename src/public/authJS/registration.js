@@ -113,27 +113,24 @@ document.getElementById("typeBusiness").addEventListener("change", function () {
 // Register function
 async function Register() {
   try {
-    const response = await fetch(
-      "https://api-es.alkisahcinema.com/api/auth/register",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: document.getElementById("businessName").value,
-          country_id: changeCountry,
-          social: document.getElementById("socialMedia").value,
-          type_id: changeTypeBusiness, // Using updated value
-          website: document.getElementById("website").value,
-          address: document.getElementById("address").value,
-          email: document.getElementById("email").value,
-          password: document.getElementById("password1").value,
-          password_confirmation: document.getElementById("confirmationPassword")
-            .value,
-        }),
-      }
-    );
+    const response = await fetch(`${window.location.origin}/auth/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: document.getElementById("businessName").value,
+        country_id: changeCountry,
+        social: document.getElementById("socialMedia").value,
+        type_id: changeTypeBusiness, // Using updated value
+        website: document.getElementById("website").value,
+        address: document.getElementById("address").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password1").value,
+        password_confirmation: document.getElementById("confirmationPassword")
+          .value,
+      }),
+    });
     if (response.ok) {
-      window.location.href = "/info-verifikasi";
+      window.location.href = "/auth/email-verification";
     } else {
       console.error("Registration failed:", await response.json());
     }

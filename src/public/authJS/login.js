@@ -4,8 +4,6 @@ const spinner = document.getElementById("spinner");
 const alertBox = document.getElementById("alertBox");
 
 
-console.log(window.location.origin);
-
 // Function to handle login
 async function handleLogin(event) {
   event.preventDefault(); // Prevent default form submission

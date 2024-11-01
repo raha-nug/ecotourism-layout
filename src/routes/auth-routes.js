@@ -1,5 +1,5 @@
 const express = require("express");
-const { login } = require("../controllers/auth.controller");
+const { login, register, logout } = require("../controllers/auth.controller");
 const router = express.Router();
 
 router.get("/login", (req, res) => {
@@ -19,5 +19,7 @@ router.get("/email-verification", (req, res) => {
 });
 
 router.post("/login", login);
+router.post("/register", register);
+router.post("/logout", logout);
 
 module.exports = router;
