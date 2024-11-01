@@ -10,24 +10,11 @@ const login = async (req, res) => {
 
     const data = await response.json();
 
+
     if (!response.ok) {
       throw new Error(data.message || "Failed to log in");
     }
 
-    const me = await fetch(`${process.env.BASE_URL}/auth/auth-me`, {
-      headers: {
-        Authorization: data.token,
-      },
-    });
-
-    const meData = await me.json();
-
-    if (!me.ok) {
-      throw new Error(data.message || "Failed to log in");
-    }
-
-    // Todo
-    // Create req.user
 
     res.cookie("token", data.token, {
       httpOnly: true,
@@ -36,9 +23,10 @@ const login = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000, //1 day
     });
 
+
     res.json({
-      role: meData.data.role,
-      url: `/${meData.data.role === "applier" ? "users" : meData.data.role}`,
+      role: data.role,
+      url: `/${data.role === "applier" ? "users" : data.role}`,
     });
   } catch (error) {
     console.error("Error:", error);
@@ -73,7 +61,7 @@ const logout = async (req, res) => {
   try {
     const response = await fetch(`${process.env.BASE_URL}/auth/logout`, {
       method: "POST",
-      
+
       headers: {
         Authorization: req.cookies.token,
         "Content-Type": "application/json",
@@ -87,13 +75,10 @@ const logout = async (req, res) => {
       throw new Error(data.message || "Failed to log out");
     }
 
-    res.clearCookie("token", {
-      httpOnly: true,
-      secure: true,
-      sameSite: "strict",
-    });
-
-    res.redirect('/auth/login')
+    
+      res.clearCookie("token");
+      res.redirect("/auth/login");
+   
   } catch (error) {
     console.error("Error:", error);
     res.status(500).send({ error: error.message || "An error occurred" });
