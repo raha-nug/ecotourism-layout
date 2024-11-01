@@ -7,27 +7,27 @@ router.use("/*", (req, res, next) => {
   next();
 });
 
-router.get("/users", (req, res) => {
+router.get("/", (req, res) => {
   res.render("templates/dashboard", {
     sidebar_include: "user-sidebar",
     content_include: "user-dashboard",
   });
 });
 
-router.get("/users/assessment", (req, res) => {
+router.get("/assessment", (req, res) => {
   res.render("templates/dashboard", {
     sidebar_include: "user-sidebar",
     content_include: "user-assessment",
   });
 });
 
-router.get("/users/profile/", (req, res) => {
+router.get("/profile/", (req, res) => {
   res.render("templates/dashboard", {
     sidebar_include: "user-sidebar",
     content_include: "user-profile",
   });
 });
 
-router.use("/users/assessment/", assessmentRoute);
+router.use("/assessment/", assessmentRoute);
 
 module.exports = router;
