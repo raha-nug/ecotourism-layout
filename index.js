@@ -31,11 +31,15 @@ app.use("/users", checkLogin, userRoutes);
 app.use("/features", featureRoute);
 
 app.get("/", (req, res) => {
-  if (req.cookies.token ) {
+  if (req.cookies.token) {
     // Next
     return res.redirect("/users"); // custom by roles
   }
   res.redirect("/auth/login");
+});
+
+app.get("/cms", (req, res) => {
+  res.render("cms-news/index", { title: "About Us" });
 });
 
 app.listen(port, () => {
