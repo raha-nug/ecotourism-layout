@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const cookieParser = require("cookie-parser");
 
-const port = 3000;
+const port = 5000;
 const userRoutes = require("./src/routes/users-routes");
 const authRoutes = require("./src/routes/auth-routes");
 const featureRoute = require("./src/routes/features/features-routes");
@@ -39,9 +39,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/cms", (req, res) => {
-  res.render("cms-news/index", { title: "About Us" });
+  res.render("cms-news/index", { title_cms_main: "Content Management System" });
 });
-
+app.get("/cms-event", (req, res) => {
+  res.render("cms-news/form-event", { title_cms_event: "Event Management" });
+});
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
