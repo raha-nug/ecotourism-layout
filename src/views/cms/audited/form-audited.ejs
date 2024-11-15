@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Form Wizard | Techmin - Bootstrap 5 Admin & Dashboard Template
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc."
+      name="description"
+    />
+    <meta content="Techzaa" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
+
+    <!-- Theme Config Js -->
+    <script src="assets/js/config.js"></script>
+
+    <!-- App css -->
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
+
+    <!-- Icons css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!-- Begin page -->
+    <div class="wrapper">
+      <!-- ========== Topbar Start ========== -->
+      <%- include('../../components/cms-components/navbar_cms.ejs', {
+      headerTitle : "Event Management System "}) %>
+      <!-- ========== Topbar End ========== -->
+
+      <!-- Left Sidebar Start -->
+      <%- include('../../components/cms-components/sidebar_cms.ejs') %>
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class=".card-title mb-0">Wizard With Progress Bar</h4>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="row mb-3">
+                            <label
+                              class="col-md-3 col-form-label"
+                              for="userName1"
+                              >Company name</label
+                            >
+                            <div class="col-md-9">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="userName1"
+                                name="userName1"
+                                value="Techmin"
+                              />
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <label
+                              class="col-md-3 col-form-label"
+                              for="userName1"
+                              >Company name</label
+                            >
+
+                            <li class="dropdown">
+                              <a
+                                class="nav-link dropdown-toggle arrow-none"
+                                data-bs-toggle="dropdown"
+                                href="#"
+                                role="button"
+                                aria-haspopup="false"
+                                aria-expanded="false"
+                              >
+                                <img
+                                  src="assets/images/flags/us.jpg"
+                                  alt="user-image"
+                                  class="me-0 me-sm-1"
+                                  height="12"
+                                />
+                                <span
+                                  class="align-middle d-none d-lg-inline-block"
+                                  >English</span
+                                >
+                                <span
+                                  class="mdi mdi-chevron-down fs-22 d-none d-sm-inline-block align-middle"
+                                ></span>
+                              </a>
+                              <div
+                                class="dropdown-menu dropdown-menu-end dropdown-menu-animated"
+                              >
+                                <!-- item-->
+                                <a
+                                  href="javascript:void(0);"
+                                  class="dropdown-item"
+                                >
+                                  <img
+                                    src="assets/images/flags/germany.jpg"
+                                    alt="user-image"
+                                    class="me-1"
+                                    height="12"
+                                  />
+                                  <span class="align-middle">German</span>
+                                </a>
+
+                                <!-- item-->
+                                <a
+                                  href="javascript:void(0);"
+                                  class="dropdown-item"
+                                >
+                                  <img
+                                    src="assets/images/flags/italy.jpg"
+                                    alt="user-image"
+                                    class="me-1"
+                                    height="12"
+                                  />
+                                  <span class="align-middle">Italian</span>
+                                </a>
+
+                                <!-- item-->
+                                <a
+                                  href="javascript:void(0);"
+                                  class="dropdown-item"
+                                >
+                                  <img
+                                    src="assets/images/flags/spain.jpg"
+                                    alt="user-image"
+                                    class="me-1"
+                                    height="12"
+                                  />
+                                  <span class="align-middle">Spanish</span>
+                                </a>
+
+                                <!-- item-->
+                                <a
+                                  href="javascript:void(0);"
+                                  class="dropdown-item"
+                                >
+                                  <img
+                                    src="assets/images/flags/russia.jpg"
+                                    alt="user-image"
+                                    class="me-1"
+                                    height="12"
+                                  />
+                                  <span class="align-middle">Russian</span>
+                                </a>
+                              </div>
+                            </li>
+                          </div>
+                          <div class="row mb-3">
+                            <label
+                              class="col-md-3 col-form-label"
+                              for="password1"
+                            >
+                              Description</label
+                            >
+                            <div class="col-md-9">
+                              <textarea
+                                class="form-control"
+                                id="example-textarea"
+                                rows="7"
+                              ></textarea>
+                            </div>
+                          </div>
+
+                          <div class="row mb-3">
+                            <label
+                              class="col-md-3 col-form-label"
+                              for="confirm1"
+                              >Location Event</label
+                            >
+                            <div class="col-md-9">
+                              <div class="mb-3">
+                                <label for="imageUpload" class="form-label"
+                                  >Pilih Gambar</label
+                                >
+                                <input
+                                  class="form-control"
+                                  type="file"
+                                  id="imageUpload"
+                                  accept="image/*"
+                                  onchange="previewImage(event)"
+                                />
+                              </div>
+                              <div class="mb-3">
+                                <label for="imagePreview" class="form-label"
+                                  >Pratinjau Gambar</label
+                                >
+                                <img
+                                  id="imagePreview"
+                                  class="img-fluid"
+                                  style="max-height: 300px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end col -->
+                      </div>
+                      <!-- end #progressbarwizard-->
+                      <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-info">
+                          Submit
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- end card-body -->
+                </div>
+                <!-- end card-->
+              </div>
+              <!-- end col -->
+              <!-- end col -->
+
+              <!-- end col -->
+            </div>
+            <!-- end row -->
+
+            <!-- end row -->
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+
+        <!-- Footer Start -->
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 text-center">
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                © Techmin - Theme by <b>Techzaa</b>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- end Footer -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Theme Settings -->
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/vendor/lucide/umd/lucide.min.js"></script>
+
+    <!-- Bootstrap Wizard Form js -->
+    <script src="assets/vendor/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+
+    <!-- Wizard Form Demo js -->
+    <script src="assets/js/pages/form-wizard.init.js"></script>
+    <!-- File Upload Demo js -->
+    <script src="assets/js/pages/fileupload.init.js"></script>
+    <!-- Dropzone File Upload js -->
+    <script src="assets/vendor/dropzone/min/dropzone.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      let articleCount = 1;
+      const articleContainer = document.getElementById("articleInputs");
+      const addButton = document.getElementById("add-article-button");
+
+      addButton.addEventListener("click", function (e) {
+        // Increment the article coun
+        e.preventDefault();
+        articleCount++; // Increment the count for unique ID
+        // Create a new div element for the new input
+        const newArticleInput = document.createElement("div");
+        newArticleInput.classList.add("my-2");
+
+        // Set the inner HTML to the same structure as the initial input, but with unique IDs
+        newArticleInput.innerHTML = `
+    <label for="example-textarea-${articleCount}" class="form-label">Article ${articleCount}</label>
+    <div class="">
+      <textarea
+        class="form-control"
+        id="example-textarea-${articleCount}"
+        rows="7"
+        placeholder="Write your article here..."
+      ></textarea>
+    </div>
+  `;
+        articleContainer.appendChild(newArticleInput);
+      });
+
+      function previewImage(event) {
+        const imagePreview = document.getElementById("imagePreview");
+        imagePreview.src = URL.createObjectURL(event.target.files[0]);
+      }
+    </script>
+  </body>
+</html>

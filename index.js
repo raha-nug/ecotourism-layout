@@ -15,9 +15,11 @@ app.use(express.json());
 app.use(cookieParser());
 require("dotenv").config();
 
-app.use("/*", generateBreadcrumb);
+// app.use("/*", generateBreadcrumb);
 
 app.use(express.static(path.join(__dirname, "src/public")));
+app.use("/assets", express.static(path.join(__dirname, "src/public/assets")));
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "src/views"));
 
@@ -39,10 +41,24 @@ app.get("/", (req, res) => {
 });
 
 app.get("/cms", (req, res) => {
-  res.render("cms-news/index", { title_cms_main: "Content Management System" });
+  res.render("cms/index", { title_cms_main: "Content Management System" });
 });
 app.get("/cms-event", (req, res) => {
-  res.render("cms-news/form-event", { title_cms_event: "Event Management" });
+  res.render("cms/event/index", { title_cms_event: "Event Management" });
+});
+app.get("/add-event", (req, res) => {
+  res.render("cms/event/form-event", { title_cms_event: "Event Management" });
+});
+app.get("/view-event", (req, res) => {
+  res.render("cms/event/view-event", { title_cms_event: "Event Management" });
+});
+app.get("/cms-audited", (req, res) => {
+  res.render("cms/audited/index", { title_cms_event: "Event Management" });
+});
+app.get("/add-audited", (req, res) => {
+  res.render("cms/audited/form-audited", {
+    title_cms_event: "Event Management",
+  });
 });
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

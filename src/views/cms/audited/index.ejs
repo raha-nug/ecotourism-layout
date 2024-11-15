@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Basic Tables | Techmin - Bootstrap 5 Admin & Dashboard Template
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc."
+      name="description"
+    />
+    <meta content="Techzaa" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- Theme Config Js -->
+    <script src="assets/js/config.js"></script>
+
+    <!-- App css -->
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
+
+    <!-- Icons css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!-- Begin page -->
+    <div class="wrapper">
+      <!-- ========== Topbar Start ========== -->
+      <%- include('../../components/cms-components/navbar_cms.ejs', {
+      headerTitle : "Audited Management System "}) %>
+      <!-- ========== Topbar End ========== -->
+
+      <!-- Left Sidebar Start -->
+      <%- include('../../components/cms-components/sidebar_cms.ejs') %>
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="container-fluid">
+            <!-- end row-->
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                      <a href="/add-audited">
+                        <button
+                          class="btn btn-lg fs-16 btn-primary"
+                          id="btn-new-event"
+                        >
+                          <i class="mdi mdi-plus-circle"></i> Create New Audited
+                        </button>
+                      </a>
+                    </div>
+                    <div class="table-responsive-sm overflow-auto">
+                      <table
+                        class="overflow-x-auto table table-striped table-centered mb-0"
+                      >
+                        <thead>
+                          <tr>
+                            <th class="text-truncate">No</th>
+                            <th class="text-truncate">Name Company</th>
+                            <th class="text-truncate">Description</th>
+                            <th class="text-truncate">Country</th>
+                            <th class="text-truncate">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td class="table-user text-truncate">
+                              Lorem ipsum dolor sit amet.
+                            </td>
+                            <td
+                              class="text-truncate"
+                              id="text"
+                              data-bs-toggle="tooltip"
+                              title="Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Culpa, rem? Lorem ipsum dolor sit amet,
+                              consectetur adipisicing elit. Inventore, ex."
+                            >
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Culpa, rem? Lorem ipsum dolor sit amet,
+                              consectetur adipisicing elit. Inventore, ex.
+                            </td>
+                            <td class="text-truncate">Indonesia</td>
+
+                            <td>
+                              <a
+                                href="/view-event"
+                                class="text-reset fs-16 px-1"
+                              >
+                                <i class="bi bi-eye"></i>
+                              </a>
+                              <a
+                                href="javascript: void(0);"
+                                class="text-reset fs-16 px-1"
+                              >
+                                <i class="bi bi-pencil"></i>
+                              </a>
+                              <a
+                                href="javascript: void(0);"
+                                class="text-reset fs-16 px-1"
+                              >
+                                <i class="ri-delete-bin-2-line"></i
+                              ></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- end table-responsive-->
+                  </div>
+                  <!-- end card body-->
+                </div>
+                <!-- end card -->
+              </div>
+              <!-- end col-->
+
+              <!-- end col-->
+            </div>
+            <!-- end row-->
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+
+        <!-- Footer Start -->
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 text-center">
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                © Techmin - Theme by <b>Techzaa</b>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- end Footer -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/vendor/lucide/umd/lucide.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const textElement = document.getElementById("text");
+        const text = textElement.innerText.trim();
+        const words = text.split(" ");
+
+        if (words.length > 10) {
+          textElement.innerText = words.slice(0, 4).join(" ") + "…";
+        }
+
+        // Inisialisasi tooltip Bootstrap
+        const tooltipTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        );
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+      });
+    </script>
+    <style>
+      /* CSS untuk mengatur lebar maksimal tooltip */
+      .tooltip-inner {
+        max-width: 500px; /* Sesuaikan lebar tooltip */
+      }
+    </style>
+  </body>
+</html>
