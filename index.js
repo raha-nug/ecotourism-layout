@@ -1,85 +1,45 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const { countries } = require("country-data"); // Import data negara
+const cookieParser = require("cookie-parser");
+
 const port = 3000;
 const userRoutes = require("./src/routes/users-routes");
-const auditorRoutes = require("./src/routes/auditor-routes");
 const authRoutes = require("./src/routes/auth-routes");
-const adminRoutes = require("./src/routes/admin-routes");
+const featureRoute = require("./src/routes/features/features-routes");
+const generateBreadcrumb = require("./src/middleware/breadcrumbMiddleware");
+const checkLogin = require("./src/middleware/authMiddleware");
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
+require("dotenv").config();
+
+app.use("/*", generateBreadcrumb);
 
 app.use(express.static(path.join(__dirname, "src/public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "src/views"));
 
-// Material Tailwind
+// Node modules static file configuration
 app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
 
-// Menambahkan folder statis untuk Bootstrap
-app.use(
-  "/bootstrap",
-  express.static(path.join(__dirname, "node_modules/bootstrap/dist/css"))
-);
-app.use(
-  "/bootstrap",
-  express.static(path.join(__dirname, "node_modules/bootstrap/dist/js"))
-);
+app.use("/auth", authRoutes);
 
-// Menambahkan folder statis untuk Bootstrap Icons
-app.use(
-  "/bootstrap",
-  express.static(path.join(__dirname, "node_modules/bootstrap-icons/font"))
-);
+app.use("/users", checkLogin, userRoutes);
 
-// Mengatur file statis dari folder node_modules
-app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
-
-// Include Routes
-app.use((req, res, next) => {
-  res.locals.req = req;
-  next();
-}, userRoutes);
-app.use((req, res, next) => {
-  res.locals.req = req;
-  next();
-}, auditorRoutes);
-app.use((req, res, next) => {
-  res.locals.req = req;
-  next();
-}, authRoutes);
-app.use((req, res, next) => {
-  res.locals.req = req;
-  next();
-}, adminRoutes);
-// Mengambil data negara dan mengirimkannya ke client
-app.get("/countries", (req, res) => {
-  const countryList = countries.all.map((country) => ({
-    name: country.name,
-    alpha2: country.alpha2, // Kode negara 2 huruf
-  }));
-
-  res.json(countryList); // Kirim data sebagai JSON
-});
-
-app.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "src/views/auth/login.html"));
-});
-app.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "src/views/auth/register.html"));
-});
-app.get("/form-register", (req, res) => {
-  res.sendFile(path.join(__dirname, "src/views/auth/formRegister.html"));
-});
+app.use("/features", featureRoute);
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "src/views/auth/login.html"));
+  if (req.cookies.token) {
+    // Next
+    return res.redirect("/users"); // custom by roles
+  }
+  res.redirect("/auth/login");
 });
 
-app.get("/landingPage", (req, res) => {
-  res.sendFile(path.join(__dirname, "src/views/landingPage/index.html"));
-  res.render("index");
+app.get("/cms", (req, res) => {
+  res.render("cms-news/index", { title: "About Us" });
 });
 
 app.listen(port, () => {

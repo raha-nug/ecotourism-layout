@@ -1,0 +1,72 @@
+<div id="sidebar" class="active">
+  <div class="sidebar-wrapper active">
+    <div class="sidebar-header position-relative">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="/users/assessment" class="d-flex gap-2">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+        <div class="theme-toggle d-flex gap-2 align-items-center mt-2">
+          <div class="form-check form-switch fs-6">
+            <input
+              class="form-check-input me-0"
+              type="checkbox"
+              id="toggle-dark"
+              hidden />
+            <label class="form-check-label"></label>
+          </div>
+        </div>
+        <div class="sidebar-toggler x">
+          <a href="#" class="sidebar-hide d-xl-none d-block">
+            <i class="bi bi-x bi-middle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-menu">
+      <ul class="menu">
+        <li class="sidebar-title">Indicator</li>
+
+        <!-- isi -->
+
+        <ul class="sidebar-list" id="sidebar">
+          <% sidebar_content.forEach(indicator => { %>
+          <li
+            class="sidebar-item"
+            data-encoded-name="<%= indicator.encodedName %>">
+            <!-- Tambahkan data-encoded-name -->
+            <a
+              href="?criteria=<%= encodeURIComponent(indicator.encodedName) %>"
+              class="sidebar-link">
+              <i class="<%= indicator.icon %>"></i>
+              <span><%= indicator.name %></span>
+            </a>
+          </li>
+          <% }) %>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Ambil query parameter 'criteria'
+    const params = new URLSearchParams(window.location.search);
+    const criteria = params.get("criteria");
+
+    if (criteria) {
+      // Temukan semua item sidebar
+      const sidebarItems = document.querySelectorAll(".sidebar-item");
+
+      // Loop melalui setiap item dan periksa apakah encodedName cocok dengan criteria
+      sidebarItems.forEach((item) => {
+        const encodedName = item.getAttribute("data-encoded-name");
+        if (encodedName === criteria) {
+          item.classList.add("active"); // Tambahkan kelas active
+        } else {
+          item.classList.remove("active"); // Hapus kelas active jika tidak cocok
+        }
+      });
+    }
+  });
+</script>

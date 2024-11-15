@@ -3,12 +3,12 @@ const withMT = require("@material-tailwind/html/utils/withMT");
 module.exports = withMT({
   prefix: "tw-", // Prefix untuk Tailwind
   content: [
-    "./src/views/**/*.{html,js}",
-    "./node_modules/tw-elements/js/**/*.js",
+    "./src/views/**/*.{html,js,ejs}",
+    // "./node_modules/tw-elements/js/**/*.js",
   ],
   theme: {
     extend: {},
   },
-  plugins: [require("tw-elements/plugin.cjs")],
+  // plugins: [require("tw-elements/plugin.cjs")],
   darkMode: "class",
 });

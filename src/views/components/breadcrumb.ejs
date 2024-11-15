@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-12 col-md-6 order-md-1 order-last">
+    <h3></h3>
+    <p class="text-subtitle text-muted">
+      
+    </p>
+  </div>
+  <div class="col-12 col-md-6 order-md-2 order-first">
+    <nav
+      aria-label="breadcrumb"
+      class="breadcrumb-header float-start float-lg-end">
+      <ol class="breadcrumb">
+        <% pages.forEach((page, index) => { %>
+        <li
+          class="breadcrumb-item <%= index === pages.length - 1 ? 'active' : '' %>">
+          <% if (index === pages.length - 1) { %> <%= page.name %> <% } else {
+          %>
+          <a href="<%= page.url %>"><%= page.name %></a>
+          <% } %>
+        </li>
+        <% }) %>
+      </ol>
+    </nav>
+  </div>
+</div>

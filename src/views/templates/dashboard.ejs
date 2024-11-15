@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../components/header') %>
+
+  <body>
+    <div id="app">
+      <%- include(`../components/sidebars/${sidebar_include}` ) %>
+      <div id="main" class="layout-navbar">
+        <%- include('../components/navbar') %>
+        <div id="main-content">
+
+          <%-include('../components/breadcrumb') %>
+
+          <!-- content start-->
+          <%- include(`../contents/users/${content_include}`) %>
+          <!-- content end -->
+              
+          <%-include('../components/footer') %>
+        </div>
+      </div>
+    </div>
+    <%- include('../components/js') %>
+  </body>
+</html>

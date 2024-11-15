@@ -1,0 +1,44 @@
+<div id="sidebar" class="active">
+  <div class="sidebar-wrapper active">
+    <div class="sidebar-header position-relative">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="/users/assessment" class="d-flex gap-2">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+        <div class="theme-toggle d-flex gap-2 align-items-center mt-2">
+          <div class="form-check form-switch fs-6">
+            <input
+              class="form-check-input me-0"
+              type="checkbox"
+              id="toggle-dark"
+              hidden />
+            <label class="form-check-label"></label>
+          </div>
+        </div>
+        <div class="sidebar-toggler x">
+          <a href="#" class="sidebar-hide d-xl-none d-block">
+            <i class="bi bi-x bi-middle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-menu">
+      <ul class="menu">
+        <li class="sidebar-title">Themes</li>
+
+        <!-- isi -->
+        <% sidebar_content.forEach(theme => { %>
+        <li
+          class="sidebar-item <%= originalUrl === `/users/assessment/${theme.name.toLowerCase().replace(/\s+/g, '-')}` ? 'active' : '' %>">
+          <a
+            href="/users/assessment/<%= theme.name.toLowerCase().replace(/\s+/g, '-') %>"
+            class="sidebar-link">
+            <i class="<%= theme.icon %>"></i>
+            <span><%= theme.name %></span>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</div>

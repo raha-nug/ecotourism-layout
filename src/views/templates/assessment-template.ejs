@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../components/header') %>
+
+    <!-- Include Quill CSS dan JS -->
+    <link rel="stylesheet" href="/css/quill.snow.css" />
+    <script src="/js/quill.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <%- include(`../components/sidebars/${sidebar_include}`,{sidebar_content} ) %>
+      <div id="main" class="layout-navbar">
+        <header class="mb-3">
+          <nav class="navbar navbar-expand navbar-light navbar-top">
+            <div class="container-fluid">
+              <a href="#" class="burger-btn d-block">
+                <i class="bi bi-justify fs-3"></i>
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </nav>
+        </header>
+        <div id="main-content">
+          <%-include('../components/breadcrumb') %>
+
+          <!-- content start-->
+          <%- include(`../contents/${content_include}`) %>
+          <!-- content end -->
+
+          <%-include('../components/footer') %>
+        </div>
+      </div>
+    </div>
+    <%- include('../components/js') %>
+  </body>
+</html>
