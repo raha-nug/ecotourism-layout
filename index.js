@@ -7,6 +7,7 @@ const port = 3000;
 const userRoutes = require("./src/routes/users-routes");
 const authRoutes = require("./src/routes/auth-routes");
 const featureRoute = require("./src/routes/features/features-routes");
+const adminRoutes = require("./src/routes/admin-routes");
 const generateBreadcrumb = require("./src/middleware/breadcrumbMiddleware");
 const checkLogin = require("./src/middleware/authMiddleware");
 
@@ -25,6 +26,11 @@ app.set("views", path.join(__dirname, "src/views"));
 app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
 
 app.use("/auth", authRoutes);
+
+app.use((req, res, next) => {
+  res.locals.req = req;
+  next();
+}, adminRoutes);
 
 app.use("/users", checkLogin, userRoutes);
 
