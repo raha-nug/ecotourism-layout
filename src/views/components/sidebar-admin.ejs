@@ -105,6 +105,21 @@
             <% }) %>
           </ul>
         </li>
+        <li class="sidebar-item has-sub">
+          <a href="#" class="sidebar-link">
+            <i class="bi bi-stack"></i>
+            <span>Manage Landing Page</span>
+          </a>
+          <ul class="submenu">
+            <% landingPage.forEach(function(subMenu) { %>
+            <li
+              class="submenu-item <%= subMenu.url === req.originalUrl ? 'active' : '' %>"
+            >
+              <a href="<%= subMenu.url  %>"><%= subMenu.name %></a>
+            </li>
+            <% }) %>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>

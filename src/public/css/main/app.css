@@ -16804,6 +16804,7 @@ body .bi:before {
 #sidebar:not(.active) ~ #main {
   margin-left: 0;
 }
+
 .sidebar-wrapper {
   background-color: #fff;
   bottom: 0;
