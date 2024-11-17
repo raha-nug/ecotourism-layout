@@ -111,13 +111,11 @@
             <span>Manage Landing Page</span>
           </a>
           <ul class="submenu">
-            <% landingPage.forEach(function(subMenu) { %>
             <li
-              class="submenu-item <%= subMenu.url === req.originalUrl ? 'active' : '' %>"
+              class="submenu-item <%= req.originalUrl === "admin/cms-event" ? 'active' : '' %>"
             >
-              <a href="<%= subMenu.url  %>"><%= subMenu.name %></a>
+              <a href="/admin/cms-event">Manage Event</a>
             </li>
-            <% }) %>
           </ul>
         </li>
       </ul>
