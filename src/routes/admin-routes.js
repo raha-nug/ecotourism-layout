@@ -6,48 +6,26 @@ const sidebarMenu = [
   { name: "Dashboard", url: "/admin", icon: "bi bi-grid-fill", active: false },
 ];
 
-const subMenu = {
-  assesment: [
-    {
-      name: "Manage Theme",
-      url: "/admin/theme",
-      icon: "bi bi-file-check",
-      active: false,
-    },
-    {
-      name: "Manage Criteria",
-      url: "/admin/criteria",
-      icon: "bi bi-file-check",
-      active: false,
-    },
-    {
-      name: "Manage Indicator",
-      url: "/admin/indikator",
-      icon: "bi bi-file-check",
-      active: false,
-    },
-  ],
-  landingPage: [
-    {
-      name: "Manage Event",
-      url: "admin/cms-event",
-      icon: "bi bi-file-check",
-      active: false,
-    },
-    {
-      name: "Manage News",
-      url: "/admin/criteria",
-      icon: "bi bi-file-check",
-      active: false,
-    },
-    {
-      name: "Manage Indicator",
-      url: "/admin/indikator",
-      icon: "bi bi-file-check",
-      active: false,
-    },
-  ],
-};
+const subMenu = [
+  {
+    name: "Manage Theme",
+    url: "/admin/theme",
+    icon: "bi bi-file-check",
+    active: false,
+  },
+  {
+    name: "Manage Criteria",
+    url: "/admin/criteria",
+    icon: "bi bi-file-check",
+    active: false,
+  },
+  {
+    name: "Manage Indicator",
+    url: "/admin/indikator",
+    icon: "bi bi-file-check",
+    active: false,
+  },
+];
 
 const Criteria = [
   {
@@ -75,7 +53,7 @@ router.get("/admin", (req, res) => {
     content: "dashboard",
     sideMenu: sidebarMenu,
     subMenu: subMenu.assesment,
-    landingPage: subMenu.landingPage,
+    landingPage: subMenu,
   });
 });
 
@@ -88,7 +66,7 @@ router.get("/admin/theme", (req, res) => {
     path_include: "contents/admin/theme",
     sideMenu: sidebarMenu,
     subMenu: subMenu.assesment,
-    landingPage: subMenu.landingPage,
+    landingPage: subMenu,
     theme: theme,
   });
 });
@@ -102,22 +80,7 @@ router.get("/admin/criteria", (req, res) => {
     path_include: "contents/admin/criteria",
     sideMenu: sidebarMenu,
     subMenu: subMenu.assesment,
-    landingPage: subMenu.landingPage,
-    criteria: Criteria,
-  });
-});
-
-router.get("/admin/cms-event", (req, res) => {
-  res.render("dashboard-admin", {
-    content: "List Criteria",
-    title: "List Criteria",
-    subtitle: "Theme Criteria",
-    pages: [""],
-    path_include: "contents/admin/cms-event",
-    sideMenu: sidebarMenu,
-    subMenu: subMenu.assesment,
-    landingPage: subMenu.landingPage,
-
+    landingPage: subMenu,
     criteria: Criteria,
   });
 });

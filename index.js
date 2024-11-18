@@ -48,6 +48,10 @@ app.get("/cms", (req, res) => {
   res.render("cms-news/index", { title: "About Us" });
 });
 
+app.get("/admin/cms-event", (req, res) => {
+  res.render("cms-event/cms-event.ejs");
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
