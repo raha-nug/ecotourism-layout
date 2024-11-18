@@ -49,8 +49,16 @@ app.get("/cms", (req, res) => {
 });
 
 app.get("/admin/cms-event", (req, res) => {
-  res.render("cms-event/index.ejs");
-  
+  res.render("CMS-LandingPage/event/index");
+});
+app.get("/admin/cms-news", (req, res) => {
+  res.render("CMS-LandingPage/news/index");
+});
+app.get("/admin/cms-audited", (req, res) => {
+  res.render("CMS-LandingPage/audited/index");
+});
+app.get("/admin/cms-staf", (req, res) => {
+  res.render("CMS-LandingPage/staf/index");
 });
 
 app.listen(port, () => {

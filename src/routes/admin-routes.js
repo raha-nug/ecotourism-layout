@@ -52,7 +52,7 @@ router.get("/admin", (req, res) => {
   res.render("dashboard-admin", {
     content: "dashboard",
     sideMenu: sidebarMenu,
-    subMenu: subMenu.assesment,
+    subMenu: subMenu,
     landingPage: subMenu,
   });
 });
@@ -65,7 +65,7 @@ router.get("/admin/theme", (req, res) => {
     pages: [""],
     path_include: "contents/admin/theme",
     sideMenu: sidebarMenu,
-    subMenu: subMenu.assesment,
+    subMenu: subMenu,
     landingPage: subMenu,
     theme: theme,
   });
@@ -79,7 +79,7 @@ router.get("/admin/criteria", (req, res) => {
     pages: [""],
     path_include: "contents/admin/criteria",
     sideMenu: sidebarMenu,
-    subMenu: subMenu.assesment,
+    subMenu: subMenu,
     landingPage: subMenu,
     criteria: Criteria,
   });
