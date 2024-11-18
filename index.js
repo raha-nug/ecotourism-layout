@@ -49,7 +49,8 @@ app.get("/cms", (req, res) => {
 });
 
 app.get("/admin/cms-event", (req, res) => {
-  res.render("cms-event/cms-event.ejs");
+  res.render("cms-event/index.ejs");
+  
 });
 
 app.listen(port, () => {
