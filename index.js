@@ -49,7 +49,10 @@ app.get("/cms", (req, res) => {
 });
 
 app.get("/admin/cms-event", (req, res) => {
-  res.render("CMS-LandingPage/event/index");
+  res.render("CMS-LandingPage/event/index.ejs");
+});
+app.get("/admin/add-event", (req, res) => {
+  res.render("CMS-LandingPage/event/form.ejs");
 });
 app.get("/admin/cms-news", (req, res) => {
   res.render("CMS-LandingPage/news/index");

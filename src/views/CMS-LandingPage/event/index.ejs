@@ -1,50 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Layout - Mazer Admin Dashboard</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="shortcut icon"
-      href="/images/logo/eco-icon.webp"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="/images/logo/eco-icon.webp"
-      type="image/png"
-    />
-
-    <link rel="stylesheet" href="/css/main/app.css" />
-    <link rel="stylesheet" href="/css/main/app-dark.css" />
-  </head>
-
+  <%- include('../../components/header.ejs') %>
   <body>
     <div id="app">
       <%- include('../sidebar.ejs') %>
       <div id="main">
         <header class="mb-3">
-          <a href="#" class="burger-btn d-block d-xl-none">
-            <i class="bi bi-justify fs-3"></i>
-          </a>
+          <nav class="navbar navbar-expand navbar-light navbar-top">
+            <div class="container-fluid">
+              <a href="#" class="burger-btn d-block">
+                <i class="bi bi-justify fs-3"></i>
+              </a>
+
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-lg-0">
+                  <li class="nav-item dropdown me-1">
+                    <a
+                      class="nav-link active dropdown-toggle text-gray-600"
+                      href="#"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i class="bi bi-envelope bi-sub fs-4"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu dropdown-menu-start"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <li>
+                        <h6 class="dropdown-header">Mail</h6>
+                      </li>
+                      <li><a class="dropdown-item" href="#">No new mail</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown me-3">
+                    <a
+                      class="nav-link active dropdown-toggle text-gray-600"
+                      href="#"
+                      data-bs-toggle="dropdown"
+                      data-bs-display="static"
+                      aria-expanded="false"
+                    >
+                      <i class="bi bi-bell bi-sub fs-4"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu dropdown-menu-end notification-dropdown"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <li class="dropdown-header">
+                        <h6>Notifications</h6>
+                      </li>
+                      <li class="dropdown-item notification-item">
+                        <a class="d-flex align-items-center" href="#">
+                          <div class="notification-icon bg-primary">
+                            <i class="bi bi-info"></i>
+                          </div>
+                          <div class="notification-text ms-4">
+                            <p class="notification-title font-bold">
+                              Your account is ready to use
+                            </p>
+                            <p class="notification-subtitle font-thin text-sm">
+                              admin ecotourism
+                            </p>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="dropdown-item notification-item">
+                        <a class="d-flex align-items-center" href="#">
+                          <div class="notification-icon bg-success">
+                            <i class="bi bi-file-earmark-check"></i>
+                          </div>
+                          <div class="notification-text ms-4">
+                            <p class="notification-title font-bold">
+                              You have conducted an audit
+                            </p>
+                            <p class="notification-subtitle font-thin text-sm">
+                              Auditor
+                            </p>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <p class="text-center py-2 mb-0">
+                          <a href="#">See all notification</a>
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="dropdown">
+                  <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="user-menu d-flex">
+                      <div class="user-name text-end me-3">
+                        <h6 class="mb-0 text-gray-600">Dior Hotel</h6>
+                        <p class="mb-0 text-sm text-gray-600">Company</p>
+                      </div>
+                      <div class="user-img d-flex align-items-center">
+                        <div class="avatar avatar-md">
+                          <img src="/images/faces/1.jpg" />
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="dropdownMenuButton"
+                    style="min-width: 11rem"
+                  >
+                    <li>
+                      <h6 class="dropdown-header">Hello, Dior!</h6>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="icon-mid bi bi-person me-2"></i>
+                        My Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="icon-mid bi bi-gear me-2"></i>
+                        Settings
+                      </a>
+                    </li>
+
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="icon-mid bi bi-box-arrow-left me-2"></i>
+                        Logout
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
         </header>
 
         <div class="page-heading">
           <div class="page-title">
             <div class="row">
               <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Manage Event</h3>
-                <p class="text-subtitle text-muted">
-                  Multiple form layouts, you can use
-                </p>
+                <h3>Content Management Events</h3>
               </div>
               <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav
@@ -56,7 +166,7 @@
                       <a href="index.html">Dashboard</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                      Manage Event
+                      DataTable Jquery
                     </li>
                   </ol>
                 </nav>
@@ -64,174 +174,72 @@
             </div>
           </div>
 
-          <!-- Basic Horizontal form layout section start -->
-          <section id="basic-horizontal-layouts">
-            <div class="row match-height">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Horizontal Form</h4>
-                  </div>
-                  <div class="card-content">
-                    <div class="card-body">
-                      <form class="form form-horizontal">
-                        <div class="form-body">
-                          <div class="row">
-                            <div class="col-md-4">
-                              <label>Title Event</label>
-                            </div>
-                            <div class="col-md-8 form-group">
-                              <input
-                                type="text"
-                                id="first-name"
-                                class="form-control"
-                                name="fname"
-                                placeholder="First Name"
-                              />
-                            </div>
-                            <div class="col-md-4">
-                              <label>Date</label>
-                            </div>
-                            <div class="col-md-8 form-group">
-                              <div class="d-flex gap-2">
-                                <input
-                                  class="form-control"
-                                  id="example-date"
-                                  type="date"
-                                  name="date"
-                                />
-                                <input
-                                  class="form-control"
-                                  id="example-month"
-                                  type="month"
-                                  name="month"
-                                />
-                              </div>
-                            </div>
-                            <div class="col-md-4">
-                              <label>Location</label>
-                            </div>
-                            <div class="col-md-8 form-group">
-                              <input
-                                type="number"
-                                id="contact-info"
-                                class="form-control"
-                                name="contact"
-                                placeholder="Mobile"
-                              />
-                            </div>
-                            <div class="col-md-4">
-                              <label>Short Description</label>
-                            </div>
-                            <div class="col-md-8 form-group">
-                              <div class="pr-4">
-                                <textarea
-                                  class="form-control"
-                                  id="example-textarea"
-                                  rows="7"
-                                ></textarea>
-                              </div>
-                            </div>
-                            <div class="col-md-4">
-                              <label>Image Event</label>
-                            </div>
-                            <div class="col-md-8 form-group">
-                              <div class="row">
-                                <div class="">
-                                  <div class="mb-10">
-                                    <label
-                                      for="example-fileinput"
-                                      class="form-label"
-                                      >Default file input</label
-                                    >
-                                    <input
-                                      type="file"
-                                      id="example-fileinput"
-                                      class="form-control"
-                                    />
-                                  </div>
-                                  <div class="d-flex justify-content-end">
-                                    <button
-                                      id="add-article-button"
-                                      class="btn btn-primary"
-                                    >
-                                      Add Article
-                                    </button>
-                                  </div>
-                                  <div id="articleInputs" class="row mb-3">
-                                    <div class="">
-                                      <label
-                                        for="example-fileinput"
-                                        class="form-label"
-                                        >Article 1</label
-                                      >
-                                      <div class="pr-4">
-                                        <textarea
-                                          class="form-control"
-                                          id="example-textarea"
-                                          rows="7"
-                                        ></textarea>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-12 d-flex justify-content-end">
-                              <button
-                                type="submit"
-                                class="btn btn-primary me-1 mb-1"
-                              >
-                                Submit
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
+          <!-- Basic Tables start -->
+          <section class="section">
+            <div class="card">
+              <div class="card-header">Jquery Datatable</div>
+              <div class="card-body">
+                <table class="table" id="table1">
+                  <thead>
+                    <tr>
+                      <th>Title Event</th>
+                      <th>Date</th>
+                      <th>Location</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Graiden</td>
+                      <td>vehicula.aliquet@semconsequat.co.uk</td>
+                      <td>076 4820 8838</td>
+                      <td class="">
+                        <a
+                          href="#"
+                          class="btn icon btn-warning"
+                          data-bs-toggle="modal"
+                          data-bs-target="#themeForm"
+                          ><i class="bi bi-pencil"></i
+                        ></a>
+                        <button
+                          type="button"
+                          id="deleteTheme"
+                          class="btn icon btn-danger"
+                        >
+                          <i class="bi bi-x"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Dale</td>
+                      <td>fringilla.euismod.enim@quam.ca</td>
+                      <td>0500 527693</td>
+                      <td class="">
+                        <i class="bi bi-eye"></i>
+                        <i class="bi bi-pencil-square mx-2"></i>
+                        <i class="bi bi-trash3"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </section>
-          <!-- // Basic Horizontal form layout section end -->
-
-          <!-- // Basic multiple Column Form section end -->
+          <!-- Basic Tables end -->
         </div>
 
-        <%- include("../footer.ejs") %>
+        <%- include('../../components/footer.ejs') %>
       </div>
     </div>
-
+    <script src="/js/bootstrap.js"></script>
     <script src="/js/app.js"></script>
 
-    <script>
-      let articleCount = 1;
-      const articleContainer = document.getElementById("articleInputs");
-      const addButton = document.getElementById("add-article-button");
+    <script src="/extensions/jquery/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+    <script src="/js/pages/datatables.js"></script>
 
-      addButton.addEventListener("click", function (e) {
-        // Increment the article coun
-        e.preventDefault();
-        articleCount++; // Increment the count for unique ID
-        // Create a new div element for the new input
-        const newArticleInput = document.createElement("div");
-        newArticleInput.classList.add("my-2");
+    <script src="/extensions/sweetalert2/sweetalert2.min.js"></script>
 
-        // Set the inner HTML to the same structure as the initial input, but with unique IDs
-        newArticleInput.innerHTML = `
-    <label for="example-textarea-${articleCount}" class="form-label">Article ${articleCount}</label>
-    <div class="">
-      <textarea
-        class="form-control"
-        id="example-textarea-${articleCount}"
-        rows="7"
-        placeholder="Write your article here..."
-      ></textarea>
-    </div>
-  `;
-        articleContainer.appendChild(newArticleInput);
-      });
-    </script>
+    <script src="/js/pages/sweetalert2.js"></script>
   </body>
 </html>

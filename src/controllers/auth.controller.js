@@ -10,11 +10,9 @@ const login = async (req, res) => {
 
     const data = await response.json();
 
-
     if (!response.ok) {
       throw new Error(data.message || "Failed to log in");
     }
-
 
     res.cookie("token", data.token, {
       httpOnly: true,
@@ -22,7 +20,6 @@ const login = async (req, res) => {
       sameSite: "strict",
       maxAge: 24 * 60 * 60 * 1000, //1 day
     });
-
 
     res.json({
       role: data.role,
@@ -36,13 +33,16 @@ const login = async (req, res) => {
 
 const register = async (req, res) => {
   try {
-    const response = await fetch(`${process.env.BASE_URL}/auth/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(req.body),
-    });
+    const response = await fetch(
+      `https://api-es.alkisahcinema.com/auth/register`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(req.body),
+      }
+    );
 
     const data = await response.json();
 
@@ -75,10 +75,8 @@ const logout = async (req, res) => {
       throw new Error(data.message || "Failed to log out");
     }
 
-    
-      res.clearCookie("token");
-      res.redirect("/auth/login");
-   
+    res.clearCookie("token");
+    res.redirect("/auth/login");
   } catch (error) {
     console.error("Error:", error);
     res.status(500).send({ error: error.message || "An error occurred" });
