@@ -26,7 +26,7 @@ const login = async (req, res) => {
 
     res.json({
       role: data.role,
-      url: `/${data.role === "applier" ? "users" : data.role}`,
+      url: `/${data.role}`,
     });
   } catch (error) {
     console.error("Error:", error);

@@ -32,10 +32,10 @@
           </nav>
         </header>
         <div id="main-content">
-          <%-include('../components/breadcrumb') %>
+
 
           <!-- content start-->
-          <%- include(`../contents/${content_include}`) %>
+          <%- include(`../contents/${content_include}`,{theme: theme}) %>
           <!-- content end -->
 
           <%-include('../components/footer') %>
