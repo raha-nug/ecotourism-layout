@@ -3,7 +3,12 @@ const generateBreadcrumb = require("../middleware/breadcrumbMiddleware");
 const router = express.Router();
 
 const sidebarMenu = [
-  { name: "Dashboard", url: "/admin", icon: "bi bi-grid-fill", active: false },
+  {
+    name: "Dashboard",
+    url: "/admin",
+    icon: "bi bi-grid-fill",
+    active: false,
+  },
 ];
 
 const subMenu = [
@@ -27,6 +32,30 @@ const subMenu = [
   },
 ];
 
+const subMenuLandingPage = [
+  {
+    name: "CMS Audited",
+    url: "/admin/cms-audited",
+    icon: "bi bi-file-check",
+  },
+  {
+    name: "CMS Events",
+    url: "/admin/cms-events",
+    icon: "bi bi-file-check",
+  },
+
+  {
+    name: "CMS News",
+    url: "/admin/cms-news",
+    icon: "bi bi-file-check",
+  },
+  {
+    name: "CMS Staf",
+    url: "/admin/cms-staf",
+    icon: "bi bi-file-check",
+  },
+];
+
 const Criteria = [
   {
     name: "AM.1",
@@ -35,6 +64,22 @@ const Criteria = [
     activities: false,
     fasilities: true,
     services: true,
+  },
+];
+const Events = [
+  {
+    no: "01",
+    title: "Reinvest profits from ecotourism development  ",
+    date: "28 Oktober 2022",
+    location: "Indonesia",
+  },
+];
+const News = [
+  {
+    no: "01",
+    title: "Reinvest profits from ecotourism development  ",
+    date: "28 Oktober 2022",
+    location: "Indonesia",
   },
 ];
 const theme = [
@@ -53,6 +98,7 @@ router.get("/admin", (req, res) => {
     content: "dashboard",
     sideMenu: sidebarMenu,
     subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
     landingPage: subMenu,
   });
 });
@@ -66,6 +112,7 @@ router.get("/admin/theme", (req, res) => {
     path_include: "contents/admin/theme",
     sideMenu: sidebarMenu,
     subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
     landingPage: subMenu,
     theme: theme,
   });
@@ -80,8 +127,178 @@ router.get("/admin/criteria", (req, res) => {
     path_include: "contents/admin/criteria",
     sideMenu: sidebarMenu,
     subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
     landingPage: subMenu,
     criteria: Criteria,
+  });
+});
+
+router.get("/admin/cms-events", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-events/index",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    event: Events,
+  });
+});
+router.get("/admin/edit-event", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-events/edit-event",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    criteria: Criteria,
+  });
+});
+router.get("/admin/add-events", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-events/cms-event",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    criteria: Criteria,
+  });
+});
+router.get("/admin/cms-news", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-news/index",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    news: News,
+  });
+});
+router.get("/admin/add-news", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-news/add-news",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    news: News,
+  });
+});
+router.get("/admin/edit-news", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-news/edit-news",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    news: News,
+  });
+});
+router.get("/admin/cms-audited", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-audited/index",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    news: News,
+  });
+});
+router.get("/admin/add-audited", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-audited/add-audited",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    news: News,
+  });
+});
+router.get("/admin/edit-audited", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-audited/edit-audited",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    news: News,
+  });
+});
+router.get("/admin/cms-staf", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-staf/index",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    news: News,
+  });
+});
+router.get("/admin/add-staf", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-staf/edit-staf",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    news: News,
+  });
+});
+router.get("/admin/edit-staf", (req, res) => {
+  res.render("dashboard-admin", {
+    content: "CMS Events",
+    title: "CMS Events",
+    subtitle: "Theme Criteria",
+    pages: [""],
+    path_include: "contents/admin/cms-staf/edit-staf",
+    sideMenu: sidebarMenu,
+    subMenu: subMenu,
+    subMenuLandingPage: subMenuLandingPage,
+    landingPage: subMenu,
+    news: News,
   });
 });
 

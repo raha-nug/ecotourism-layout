@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const cookieParser = require("cookie-parser");
 
-const port = 3000;
+const port = 5000;
 const userRoutes = require("./src/routes/users-routes");
 const authRoutes = require("./src/routes/auth-routes");
 const featureRoute = require("./src/routes/features/features-routes");
@@ -48,21 +48,21 @@ app.get("/cms", (req, res) => {
   res.render("cms-news/index", { title: "About Us" });
 });
 
-app.get("/admin/cms-event", (req, res) => {
-  res.render("CMS-LandingPage/event/index.ejs");
-});
-app.get("/admin/add-event", (req, res) => {
-  res.render("CMS-LandingPage/event/form.ejs");
-});
-app.get("/admin/cms-news", (req, res) => {
-  res.render("CMS-LandingPage/news/index");
-});
+// app.get("/admin/cms-event", (req, res) => {
+//   res.render("CMS-LandingPage/event/index.ejs");
+// });
+// app.get("/admin/add-event", (req, res) => {
+//   res.render("CMS-LandingPage/event/form.ejs");
+// });
+// app.get("/admin/cms-news", (req, res) => {
+//   res.render("CMS-LandingPage/news/index");
+// });
 app.get("/admin/cms-audited", (req, res) => {
   res.render("CMS-LandingPage/audited/index");
 });
-app.get("/admin/cms-staf", (req, res) => {
-  res.render("CMS-LandingPage/staf/index");
-});
+// app.get("/admin/cms-staf", (req, res) => {
+//   res.render("CMS-LandingPage/staf/index");
+// });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

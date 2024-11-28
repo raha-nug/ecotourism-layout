@@ -2,7 +2,7 @@
   <div class="page-title">
     <div class="row">
       <div class="col-12 col-md-6 order-md-1 order-last">
-        <h3>Manage Event</h3>
+        <h3>Manage News</h3>
         <p class="text-subtitle text-muted">
           Multiple form layouts, you can use
         </p>
@@ -17,7 +17,7 @@
               <a href="index.html">Dashboard</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-              Manage Event
+              Manage News
             </li>
           </ol>
         </nav>
@@ -39,7 +39,7 @@
                 <div class="form-body">
                   <div class="row">
                     <div class="col-md-4">
-                      <label>First Name</label>
+                      <label> News Headline</label>
                     </div>
                     <div class="col-md-8 form-group">
                       <input
@@ -51,63 +51,72 @@
                       />
                     </div>
                     <div class="col-md-4">
-                      <label>Email</label>
+                      <label>Date</label>
                     </div>
                     <div class="col-md-8 form-group">
-                      <input
-                        type="email"
-                        id="email-id"
-                        class="form-control"
-                        name="email-id"
-                        placeholder="Email"
-                      />
+                      <div class="d-flex gap-2">
+                        <input
+                          class="form-control"
+                          id="example-date"
+                          type="date"
+                          name="date"
+                        />
+                        <input
+                          class="form-control"
+                          id="example-month"
+                          type="month"
+                          name="month"
+                        />
+                      </div>
                     </div>
                     <div class="col-md-4">
-                      <label>Mobile</label>
+                      <label>Short Description</label>
                     </div>
                     <div class="col-md-8 form-group">
-                      <input
-                        type="number"
-                        id="contact-info"
-                        class="form-control"
-                        name="contact"
-                        placeholder="Mobile"
-                      />
+                      <div class="pr-4">
+                        <textarea
+                          class="form-control"
+                          id="example-textarea"
+                          rows="7"
+                        ></textarea>
+                      </div>
                     </div>
                     <div class="col-md-4">
-                      <label>Password</label>
+                      <label>Image Event</label>
                     </div>
                     <div class="col-md-8 form-group">
-                      <input
-                        type="password"
-                        id="password"
-                        class="form-control"
-                        name="password"
-                        placeholder="Password"
-                      />
-                    </div>
-                    <div class="col-12 col-md-8 offset-md-4 form-group">
-                      <div class="form-check">
-                        <div class="checkbox">
-                          <input
-                            type="checkbox"
-                            id="checkbox1"
-                            class="form-check-input"
-                            checked
-                          />
-                          <label for="checkbox1">Remember Me</label>
+                      <div class="row">
+                        <div class="">
+                          <div class="mb-10">
+                            <label for="example-fileinput" class="form-label"
+                              >Default file input</label
+                            >
+                            <input
+                              type="file"
+                              id="example-fileinput"
+                              class="form-control"
+                            />
+                          </div>
+                          <div id="articleInputs" class="row mb-3">
+                            <div class="">
+                              <label for="example-fileinput" class="form-label"
+                                >Article 1</label
+                              >
+                              <div class="pr-4">
+                                <textarea
+                                  class="form-control"
+                                  id="example-textarea"
+                                  rows="7"
+                                ></textarea>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div class="col-sm-12 d-flex justify-content-end">
                       <button type="submit" class="btn btn-primary me-1 mb-1">
                         Submit
-                      </button>
-                      <button
-                        type="reset"
-                        class="btn btn-light-secondary me-1 mb-1"
-                      >
-                        Reset
                       </button>
                     </div>
                   </div>
@@ -119,4 +128,7 @@
       </div>
     </div>
   </section>
+  <!-- // Basic Horizontal form layout section end -->
+
+  <!-- // Basic multiple Column Form section end -->
 </div>
