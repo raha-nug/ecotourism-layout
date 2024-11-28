@@ -9,10 +9,10 @@
         <%- include('../components/navbar') %>
         <div id="main-content">
 
-          <%-include('../components/breadcrumb') %>
+
 
           <!-- content start-->
-          <%- include(`../contents/users/${content_include}`) %>
+          <%- include(`../contents/applier/${content_include}`,{data: data}) %>
           <!-- content end -->
               
           <%-include('../components/footer') %>
