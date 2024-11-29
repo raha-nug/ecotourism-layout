@@ -3,7 +3,6 @@ const btnLogin = document.getElementById("btnLogin");
 const spinner = document.getElementById("spinner");
 const alertBox = document.getElementById("alertBox");
 
-
 // Function to handle login
 async function handleLogin(event) {
   event.preventDefault(); // Prevent default form submission
@@ -18,16 +17,13 @@ async function handleLogin(event) {
 
   // API request setup
   try {
-    const response = await fetch(
-      `${window.location.origin}/auth/login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      }
-    );
+    const response = await fetch(`${window.location.origin}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
     const data = await response.json();
     console.log(data);
 

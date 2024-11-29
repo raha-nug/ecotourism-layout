@@ -1,12 +1,15 @@
 const login = async (req, res) => {
   try {
-    const response = await fetch(`${process.env.BASE_URL}/auth/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(req.body),
-    });
+    const response = await fetch(
+      `https://api-es.alkisahcinema.com/api/auth/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(req.body),
+      }
+    );
 
     const data = await response.json();
 
@@ -23,7 +26,7 @@ const login = async (req, res) => {
 
     res.json({
       role: data.role,
-      url: `/${data.role === "applier" ? "users" : data.role}`,
+      url: `/${data.role}`,
     });
   } catch (error) {
     console.error("Error:", error);
@@ -33,16 +36,13 @@ const login = async (req, res) => {
 
 const register = async (req, res) => {
   try {
-    const response = await fetch(
-      `https://api-es.alkisahcinema.com/auth/register`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(req.body),
-      }
-    );
+    const response = await fetch(`${process.env.BASE_URL}/auth/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(req.body),
+    });
 
     const data = await response.json();
 

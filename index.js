@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const cookieParser = require("cookie-parser");
 
-const port = 5000;
+const port = 3000;
 const userRoutes = require("./src/routes/users-routes");
 const authRoutes = require("./src/routes/auth-routes");
 const featureRoute = require("./src/routes/features/features-routes");
@@ -11,6 +11,8 @@ const adminRoutes = require("./src/routes/admin-routes");
 const generateBreadcrumb = require("./src/middleware/breadcrumbMiddleware");
 const checkLogin = require("./src/middleware/authMiddleware");
 
+// const cors = require("cors");
+// app.use(cors({ origin: "http://localhost:5000" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
@@ -32,7 +34,7 @@ app.use((req, res, next) => {
   next();
 }, adminRoutes);
 
-app.use("/users", checkLogin, userRoutes);
+app.use("/applier", checkLogin, userRoutes);
 
 app.use("/features", featureRoute);
 
@@ -47,7 +49,6 @@ app.get("/", (req, res) => {
 app.get("/cms", (req, res) => {
   res.render("cms-news/index", { title: "About Us" });
 });
-
 // app.get("/admin/cms-event", (req, res) => {
 //   res.render("CMS-LandingPage/event/index.ejs");
 // });
@@ -57,9 +58,6 @@ app.get("/cms", (req, res) => {
 // app.get("/admin/cms-news", (req, res) => {
 //   res.render("CMS-LandingPage/news/index");
 // });
-app.get("/admin/cms-audited", (req, res) => {
-  res.render("CMS-LandingPage/audited/index");
-});
 // app.get("/admin/cms-staf", (req, res) => {
 //   res.render("CMS-LandingPage/staf/index");
 // });

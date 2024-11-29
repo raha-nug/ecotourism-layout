@@ -9,6 +9,12 @@ const sidebarMenu = [
     icon: "bi bi-grid-fill",
     active: false,
   },
+  {
+    name: "Auditor Management",
+    url: "/admin/auditor",
+    icon: "bi bi-grid-fill",
+    active: false,
+  },
 ];
 
 const subMenu = [
@@ -93,7 +99,7 @@ const theme = [
   },
 ];
 
-router.get("/admin", (req, res) => {
+router.get("/superadmin", (req, res) => {
   res.render("dashboard-admin", {
     content: "dashboard",
     sideMenu: sidebarMenu,
